@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@drawable/divider"
+        android:orientation="vertical"
+        android:showDividers="middle">
+        
+        <com.wning.demo.customview.view.LinearGradientView android:layout_width="match_parent"
+                                                           android:layout_height="100dp"/>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="200dp">
+
+        <com.wning.demo.customview.view.TouchMoveView android:layout_width="40dp"
+                                                      android:layout_height="40dp"
+        android:background="@android:color/holo_red_light"/>
+
+        </LinearLayout>
+
+        <com.wning.demo.customview.view.test.MATRIX_SAVE_FLAG_View
+            android:layout_width="match_parent"
+            android:layout_height="100dp"/>
+
+
+        <com.wning.demo.customview.view.test.TextWave_DSTIN android:layout_width="match_parent"
+                                                            android:layout_height="400dp"/>
+
+        <com.wning.demo.customview.view.test.EraserView_SRCOUT android:layout_width="match_parent"
+                                                               android:layout_height="250dp"/>
+
+        <com.wning.demo.customview.view.test.InvertImageView android:layout_width="match_parent"
+                                                             android:layout_height="450dp"/>
+
+
+        <!--<com.wning.demo.customview.view.test.AvoidXfermodeView android:layout_width="match_parent"-->
+                                                               <!--android:layout_height="200dp"/>-->
+
+
+        <com.wning.demo.customview.view.test.PorterDuffColorFilterView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"/>
+
+        <com.wning.demo.customview.view.test.LightingColorFilterView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"/>
+
+
+        <com.wning.demo.customview.view.test.ColorMatrixColorFilterSeekView android:layout_width="match_parent"
+                                                                            android:layout_height="400dp"/>
+
+        <com.wning.demo.customview.view.test.ColorMatrixColorFilterView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"/>
+
+
+        <com.wning.demo.customview.view.test.PathDashPathEffectStyleView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"/>
+
+        <com.wning.demo.customview.view.test.PathDashPathEffectView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"/>
+
+        <com.wning.demo.customview.view.test.DiscretePathEffectView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"/>
+
+        <com.wning.demo.customview.view.test.DashPathEffectView android:layout_width="match_parent"
+                                                                android:layout_height="300dp"/>
+
+        <com.wning.demo.customview.view.test.CornerPathEffectView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"/>
+
+        <com.wning.demo.customview.view.test.PathView android:layout_width="match_parent"
+                                                      android:layout_height="250dp"/>
+
+        <com.wning.demo.customview.view.test.RegionView android:layout_width="match_parent"
+                                                        android:layout_height="100dp"/>
+
+        <com.wning.demo.customview.view.test.RegionOPView android:layout_width="match_parent"
+                                                          android:layout_height="200dp"/>
+
+        <com.wning.demo.customview.view.test.FontMetricsView android:layout_width="match_parent"
+                                                             android:layout_height="100dp"/>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.wning.demo.customview.activity.CustomAnimActivity"
+     android:showDividers="middle"
+android:divider="@drawable/divider">
+
+    <com.wning.demo.customview.view.VideoLoadingSpringView
+        android:id="@+id/loading_spring"
+        android:layout_width="match_parent"
+        android:layout_height="270dp" />
+
+    <com.wning.demo.customview.view.FansGroupProgressBar
+        android:layout_gravity="center_horizontal"
+        android:layout_width="160dp"
+        android:layout_height="10dp"/>
+
+    <TextView
+        android:id="@+id/tv_argb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:textColor="#000000"
+        android:padding="15dp"
+        android:text="ArgbEvaluator"
+    />
+
+
+
+    <com.wning.demo.customview.view.PullToRefreshBearView
+        android:id="@+id/bear"
+        android:background="#000000"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+    />
+
+    <!--<LinearLayout android:layout_width="match_parent" android:layout_height="100dp"-->
+    <!--android:orientation="horizontal">-->
+
+        <!--<com.wning.demo.customview.view.PullToRefreshBearView-->
+            <!--android:id="@+id/bear"-->
+            <!--android:background="#000000"-->
+            <!--android:layout_width="150dp"-->
+            <!--android:layout_height="100dp"/>-->
+
+        <!--<Button android:id="@+id/start"-->
+            <!--android:layout_width="wrap_content" android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center_horizontal" android:text="start"-->
+        <!--android:onClick="OnClick"/>-->
+        <!--<Button android:id="@+id/stop"-->
+                <!--android:layout_width="wrap_content" android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center_horizontal" android:text="stop"-->
+                <!--android:onClick="OnClick"/>-->
+    <!--</LinearLayout>-->
+
+
+
+    <!--<com.wning.demo.customview.view.VideoAnimatorLoadingView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="270dp" />-->
+
+    <!--<com.wning.demo.customview.view.VideoLoadingView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="270dp"/>-->
+
+    <!--<com.wning.demo.customview.view.VideoSurfaceLoadingView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="270dp" />-->
+
+
+
+    <com.wning.demo.customview.view.FansGroupUpTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/fans_group_text1"
+        android:visibility="gone"
+    />
+
+
+    <com.wning.demo.customview.view.FansGroupUpTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/fans_group_text2"
+        android:visibility="gone"
+    />
+
+
+</LinearLayout>
+</ScrollView>

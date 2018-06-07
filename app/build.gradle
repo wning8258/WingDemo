@@ -1,0 +1,63 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.android.AndroidCompileSdkVersion
+    buildToolsVersion rootProject.ext.android.AndroidBuildToolsVersion
+
+    useLibrary 'org.apache.http.legacy'  //6.0以上使用httpclient
+
+    defaultConfig {
+        applicationId "com.wning.demo"
+        minSdkVersion rootProject.ext.android.AndridMinSdkVersion
+        targetSdkVersion rootProject.ext.android.AndroidTargetSdkVersion
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+dependencies {
+
+    def googleDependencies = rootProject.ext.goodleDependencies
+    def otherDependencies = rootProject.ext.otherDependdencies
+
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':wingannotation') //编译时注解
+    implementation googleDependencies.support_v4
+    implementation googleDependencies.appcompat_v7
+    implementation googleDependencies.design
+
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.4-beta2'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
+    implementation 'com.jakewharton:butterknife:8.4.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+
+    implementation otherDependdencies.nineoldandroids //动画兼容2.3
+    implementation otherDependdencies.fresco //fresco
+    implementation otherDependdencies.rebound //弹性动画库
+    implementation otherDependdencies.okhttp//okhttp
+
+    implementation 'io.reactivex:rxandroid:1.2.1'//rxjava
+    implementation 'io.reactivex:rxjava:1.1.6'
+
+    implementation otherDependdencies.gson
+    implementation 'com.squareup.retrofit2:retrofit:2.1.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.0.2'
+
+    implementation 'com.google.dagger:dagger:2.11-rc2'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.11-rc2'
+
+    debugImplementation 'com.amitshekhar.android:debug-db:1.0.0' //浏览器中查看数据库
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+}

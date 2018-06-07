@@ -1,0 +1,45 @@
+@startuml
+
+abstract class AbstractList
+abstract AbstractCollection
+interface List
+interface Collection
+
+class Object{
+}
+
+class Person{
+ name:String
+ code:int
+}
+
+Object <|-- "继承"  Person
+
+note left of Person
+this is a note Person
+this is a note Person
+this is a note Person
+end note
+
+note right of Object : this is a note Object
+
+
+List <|-- AbstractList
+Collection <|-- AbstractCollection
+
+Collection <|- List
+AbstractCollection <|- AbstractList
+AbstractList <|-- ArrayList
+
+class ArrayList {
+Object[] elementData
+size()
+}
+
+enum TimeUnit {
+DAYS
+HOURS
+MINUTES
+}
+
+@enduml

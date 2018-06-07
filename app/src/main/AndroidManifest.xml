@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.wning.demo"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 访问Internet资源 -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- 读写Sdcard -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".customview.activity.XfermodeRoundImageViewActivity">
+        </activity>
+        <activity android:name=".customview.activity.XfermodeActivity"/>
+        <activity android:name=".customview.activity.ReboundActivity"/>
+        <activity
+            android:name=".customview.activity.BezierQQBubbleViewActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".customview.activity.ShaderRoundImageViewActivity">
+        </activity>
+        <activity android:name=".gifteffect.QIQIGiftEffectActivity"/>
+        <activity android:name="com.guagua.anim.RepeatGiftActivity"/>
+        <activity android:name="com.guagua.anim.QuotaGiftActivity"/>
+        <activity android:name="com.guagua.anim.SingleGiftActivity"/>
+        <activity android:name="com.guagua.anim.FlyDriverActivity"/>
+        <activity android:name="com.guagua.anim.LandDriverActivity"/>
+        <activity android:name="com.guagua.anim.GiftActivity"/>
+        <activity android:name="com.guagua.anim.GiftEffectActivity"/>
+        <activity android:name=".rxjava.RxJavaActivity"/>
+        <activity android:name=".mvp.UserInfoActivity"/>
+        <activity android:name=".dagger2.Dagger2Activity"/>
+
+        <service android:name=".logprint.LogPrinterService"/>
+
+        <activity android:name=".customview.activity.CustomViewActivity">
+        </activity>
+        <activity android:name=".customview.activity.CustomAnimActivity">
+        </activity>
+        <activity android:name=".customview.activity.bezier.BezierActivity1">
+        </activity>
+        <activity android:name=".customview.activity.bezier.BezierActivity2">
+        </activity>
+        <activity android:name=".customview.activity.bezier.BezierWaveActivity">
+        </activity>
+        <activity android:name=".matrix.MatrixActivity">
+        </activity>
+        <activity android:name=".customview.activity.LooperActivity"/>
+        <activity android:name=".customview.activity.ChoreographerActivity"/>
+        <activity android:name=".net.okhttp.OkHttpActivity"/>
+        <activity android:name=".net.retrofit.RetrofitActivity"/>
+        <activity android:name=".net.volley.VolleyActivity">
+        </activity>
+        <activity android:name=".net.volley.ui.GsonRequestActivity">
+        </activity>
+        <activity android:name=".net.volley.ui.ImageLoadingActivity">
+        </activity>
+        <activity android:name=".net.volley.ui.JsonRequestActivity">
+        </activity>
+        <activity android:name=".net.volley.ui.ParamsRequestActivity">
+        </activity>
+        <activity android:name=".net.volley.ui.SimpleRequestActivity">
+        </activity>
+        <activity
+            android:name=".customview.activity.CoordinatorLayoutActivity"
+            android:label="@string/title_activity_coordinator_layout"
+            android:theme="@style/AppTheme">
+        </activity>
+        <activity
+            android:name=".customview.activity.InterceptTouchEventActivity"
+            android:label="@string/title_activity_intercept_touch_event"
+            android:theme="@style/AppTheme">
+        </activity>
+
+        <activity
+            android:name=".customview.activity.ViewDragHelperActivity"
+            android:label="@string/title_activity_intercept_touch_event"
+            android:theme="@style/AppTheme">
+        </activity>
+
+
+        <activity
+            android:name=".producer.ProducerActivity"
+            android:theme="@style/AppTheme">
+        </activity>
+    </application>
+
+</manifest>
