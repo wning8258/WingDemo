@@ -33,7 +33,10 @@ dependencies {
     def otherDependencies = rootProject.ext.otherDependdencies
 
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+
     implementation project(':wingannotation') //编译时注解
+    annotationProcessor project(':wingannotation')
+
     implementation googleDependencies.support_v4
     implementation googleDependencies.appcompat_v7
     implementation googleDependencies.design
