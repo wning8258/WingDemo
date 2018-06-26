@@ -24,7 +24,6 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
 import retrofit2.http.QueryMap;
-import rx.subscriptions.CompositeSubscription;
 
 public class RetrofitActivity extends BaseActivity {
 
@@ -38,8 +37,6 @@ public class RetrofitActivity extends BaseActivity {
     @BindView(R.id.btn2)
     Button btn2;
 
-
-    CompositeSubscription subscription=new CompositeSubscription();
 
     @Override
     protected int getLayoutId() {
@@ -95,14 +92,6 @@ public class RetrofitActivity extends BaseActivity {
 
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        LogUtils.i(TAG,"onDestroy subscription hasSubscriptions :"+subscription.hasSubscriptions());
-        if(subscription!=null&&!subscription.hasSubscriptions()){
-            subscription.unsubscribe();
-        }
-    }
 
     /**
      * 设置请求统一的header

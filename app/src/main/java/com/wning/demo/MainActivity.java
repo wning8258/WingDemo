@@ -12,7 +12,6 @@ import android.widget.TextView;
 
 import com.example.Wing;
 import com.guagua.modules.utils.Utils;
-import com.wning.demo.customview.activity.BezierQQBubbleViewActivity;
 import com.wning.demo.customview.activity.ChoreographerActivity;
 import com.wning.demo.customview.activity.CoordinatorLayoutActivity;
 import com.wning.demo.customview.activity.CustomAnimActivity;
@@ -35,7 +34,7 @@ import com.wning.demo.net.okhttp.OkHttpActivity;
 import com.wning.demo.net.retrofit.RetrofitActivity;
 import com.wning.demo.net.volley.VolleyActivity;
 import com.wning.demo.producer.ProducerActivity;
-import com.wning.demo.rxjava.RxJavaActivity;
+import com.wning.demo.rxjava.RxJava2Activity;
 
 import java.util.ArrayList;
 
@@ -98,7 +97,6 @@ public class MainActivity extends BaseActivity {
         items.add(new DataItem().setTitle("贝塞尔曲线demo").setClazz(BezierActivity1.class));
         items.add(new DataItem().setTitle("贝塞尔曲线圆滑划线").setClazz(BezierActivity2.class));
         items.add(new DataItem().setTitle("贝塞尔曲线波浪").setClazz(BezierWaveActivity.class));
-        items.add(new DataItem().setTitle("贝塞尔曲线qq点赞效果").setClazz(BezierQQBubbleViewActivity.class));
         items.add(new DataItem().setTitle("CoordinatorLayout").setClazz(CoordinatorLayoutActivity.class));
         items.add(new DataItem().setTitle("InterceptTouchEvent").setClazz(InterceptTouchEventActivity.class));
         items.add(new DataItem().setTitle("ViewDragHelper").setClazz(ViewDragHelperActivity.class));
@@ -123,7 +121,8 @@ public class MainActivity extends BaseActivity {
         dataItems.add(new DataList().setTitle("网络").setList(items));
 
         items=new ArrayList<>();
-        items.add(new DataItem().setTitle("RxJava").setClazz(RxJavaActivity.class));
+       // items.add(new DataItem().setTitle("RxJava").setClazz(RxJavaActivity.class));
+        items.add(new DataItem().setTitle("RxJava2").setClazz(RxJava2Activity.class));
         items.add(new DataItem().setTitle("MVP").setClazz(UserInfoActivity.class));
         items.add(new DataItem().setTitle("Dagger2").setClazz(Dagger2Activity.class));
         items.add(new DataItem().setTitle("Fresco Producer&Consumer").setClazz(ProducerActivity.class));

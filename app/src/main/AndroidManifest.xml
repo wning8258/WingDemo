@@ -26,10 +26,6 @@
         </activity>
         <activity android:name=".customview.activity.XfermodeActivity"/>
         <activity android:name=".customview.activity.ReboundActivity"/>
-        <activity
-            android:name=".customview.activity.BezierQQBubbleViewActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
         <activity android:name=".customview.activity.ShaderRoundImageViewActivity">
         </activity>
         <activity android:name=".gifteffect.QIQIGiftEffectActivity"/>
@@ -40,7 +36,8 @@
         <activity android:name="com.guagua.anim.LandDriverActivity"/>
         <activity android:name="com.guagua.anim.GiftActivity"/>
         <activity android:name="com.guagua.anim.GiftEffectActivity"/>
-        <activity android:name=".rxjava.RxJavaActivity"/>
+        <!--<activity android:name=".rxjava.RxJavaActivity"/>-->
+        <activity android:name=".rxjava.RxJava2Activity"/>
         <activity android:name=".mvp.UserInfoActivity"/>
         <activity android:name=".dagger2.Dagger2Activity"/>
 

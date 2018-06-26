@@ -5,17 +5,13 @@
     android:layout_height="match_parent"
 >
 
-    <!--<android.support.v7.widget.RecyclerView-->
-        <!--android:visibility="gone"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:id="@+id/recyclerView"/>-->
 
     <android.support.v7.widget.Toolbar
         android:background="?attr/colorPrimary"
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
                                        android:layout_height="wrap_content"/>
+
 
     <ExpandableListView
         android:id="@+id/list"
