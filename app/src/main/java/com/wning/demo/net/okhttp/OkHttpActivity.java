@@ -5,6 +5,7 @@ import android.os.Environment;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.gson.Gson;
 import com.guagua.modules.utils.LogUtils;
 import com.guagua.qiqi.utils.QiQiHttpConfig;
 import com.guagua.qiqi.utils.SignHelper;
@@ -28,6 +29,7 @@ import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -150,7 +152,8 @@ public class OkHttpActivity extends BaseActivity {
                         try {
                             Response response = mClient.newCall(request).execute();
                             String result = response.body().string();
-                          //  LogUtils.i(TAG, "onResponse " + result);
+                            LogUtils.i(TAG, "onResponse " + result);
+                            LogUtils.i(TAG,"onResponse Thread :"+Thread.currentThread().getName());
                             emitter.onNext(result);
                             emitter.onComplete();
                         } catch (IOException e) {
@@ -160,8 +163,18 @@ public class OkHttpActivity extends BaseActivity {
                     }
                 })
                         .subscribeOn(Schedulers.io())
-                        .observeOn(AndroidSchedulers.mainThread())
-                       .subscribe(new Observer<String>() {
+                        .observeOn(AndroidSchedulers.mainThread())  //指定observer所在的线程，包括map,flatmap等
+                        .map(new Function<String, GameInfo>() {
+                            @Override
+                            public GameInfo apply(String s) throws Exception {
+
+                                LogUtils.i(TAG,"map Thread :"+Thread.currentThread().getName());
+                                GameInfo gameInfo = new Gson().fromJson(s, GameInfo.class);
+                                return gameInfo;
+                            }
+                        })
+
+                       .subscribe(new Observer<GameInfo>() {
 
                            private Disposable mDisposable;
                            @Override
@@ -171,8 +184,9 @@ public class OkHttpActivity extends BaseActivity {
                            }
 
                            @Override
-                           public void onNext(String s) {
-                               LogUtils.i(TAG,"onNext :"+s);
+                           public void onNext(GameInfo s) {
+                               LogUtils.i(TAG,"onNext gameinfo:"+s);
+                               LogUtils.i(TAG,"onNext Thread :"+Thread.currentThread().getName());
                            }
 
                            @Override
