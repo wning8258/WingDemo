@@ -1,10 +1,13 @@
-package com.wning.demo.mvp.base;
+package com.wning.demo.service.presenter;
+
+
+import com.wning.demo.service.view.BaseView;
 
 /**
  * Created by wning on 16/7/17.
  */
 
-public abstract class BasePresenter <T extends BaseView>{
+public abstract class BasePresenter<T extends BaseView>{
 
     public T mView;
 

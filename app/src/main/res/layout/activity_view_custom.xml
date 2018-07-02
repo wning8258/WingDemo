@@ -29,8 +29,8 @@
         <com.wning.demo.customview.view.test.TextWave_DSTIN android:layout_width="match_parent"
                                                             android:layout_height="400dp"/>
 
-        <com.wning.demo.customview.view.test.EraserView_SRCOUT android:layout_width="match_parent"
-                                                               android:layout_height="250dp"/>
+        <com.wning.demo.customview.view.test.EraserCustomView_SRCOUT android:layout_width="match_parent"
+                                                                     android:layout_height="250dp"/>
 
         <com.wning.demo.customview.view.test.InvertImageView android:layout_width="match_parent"
                                                              android:layout_height="450dp"/>
@@ -40,11 +40,11 @@
                                                                <!--android:layout_height="200dp"/>-->
 
 
-        <com.wning.demo.customview.view.test.PorterDuffColorFilterView
+        <com.wning.demo.customview.view.test.PorterDuffColorFilterCustomView
             android:layout_width="match_parent"
             android:layout_height="200dp"/>
 
-        <com.wning.demo.customview.view.test.LightingColorFilterView
+        <com.wning.demo.customview.view.test.LightingColorFilterCustomView
             android:layout_width="match_parent"
             android:layout_height="200dp"/>
 
@@ -52,41 +52,41 @@
         <com.wning.demo.customview.view.test.ColorMatrixColorFilterSeekView android:layout_width="match_parent"
                                                                             android:layout_height="400dp"/>
 
-        <com.wning.demo.customview.view.test.ColorMatrixColorFilterView
+        <com.wning.demo.customview.view.test.ColorMatrixColorFilterCustomView
             android:layout_width="match_parent"
             android:layout_height="150dp"/>
 
 
-        <com.wning.demo.customview.view.test.PathDashPathEffectStyleView
+        <com.wning.demo.customview.view.test.PathDashPathEffectStyleCustomView
             android:layout_width="match_parent"
             android:layout_height="300dp"/>
 
-        <com.wning.demo.customview.view.test.PathDashPathEffectView
+        <com.wning.demo.customview.view.test.PathDashPathEffectCustomView
             android:layout_width="match_parent"
             android:layout_height="300dp"/>
 
-        <com.wning.demo.customview.view.test.DiscretePathEffectView
+        <com.wning.demo.customview.view.test.DiscretePathEffectCustomView
             android:layout_width="match_parent"
             android:layout_height="300dp"/>
 
-        <com.wning.demo.customview.view.test.DashPathEffectView android:layout_width="match_parent"
-                                                                android:layout_height="300dp"/>
+        <com.wning.demo.customview.view.test.DashPathEffectCustomView android:layout_width="match_parent"
+                                                                      android:layout_height="300dp"/>
 
-        <com.wning.demo.customview.view.test.CornerPathEffectView
+        <com.wning.demo.customview.view.test.CornerPathEffectCustomView
             android:layout_width="match_parent"
             android:layout_height="300dp"/>
 
-        <com.wning.demo.customview.view.test.PathView android:layout_width="match_parent"
-                                                      android:layout_height="250dp"/>
+        <com.wning.demo.customview.view.test.PathCustomView android:layout_width="match_parent"
+                                                            android:layout_height="250dp"/>
 
-        <com.wning.demo.customview.view.test.RegionView android:layout_width="match_parent"
-                                                        android:layout_height="100dp"/>
+        <com.wning.demo.customview.view.test.RegionCustomView android:layout_width="match_parent"
+                                                              android:layout_height="100dp"/>
 
-        <com.wning.demo.customview.view.test.RegionOPView android:layout_width="match_parent"
-                                                          android:layout_height="200dp"/>
+        <com.wning.demo.customview.view.test.RegionOPCustomView android:layout_width="match_parent"
+                                                                android:layout_height="200dp"/>
 
-        <com.wning.demo.customview.view.test.FontMetricsView android:layout_width="match_parent"
-                                                             android:layout_height="100dp"/>
+        <com.wning.demo.customview.view.test.FontMetricsCustomView android:layout_width="match_parent"
+                                                                   android:layout_height="100dp"/>
 
     </LinearLayout>
 </ScrollView>

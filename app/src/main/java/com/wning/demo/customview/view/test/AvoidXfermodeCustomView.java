@@ -20,17 +20,17 @@ import com.wning.demo.R;
 /**
  * @deprecated
  */
-public class AvoidXfermodeView extends BaseView {
+public class AvoidXfermodeCustomView extends BaseCustomView {
 
     private Paint mPaint;
     private Bitmap mBmp;
 
-    public AvoidXfermodeView(Context context) {
+    public AvoidXfermodeCustomView(Context context) {
         super(context);
         init();
     }
 
-    public AvoidXfermodeView(Context context, @Nullable AttributeSet attrs) {
+    public AvoidXfermodeCustomView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         init();
     }

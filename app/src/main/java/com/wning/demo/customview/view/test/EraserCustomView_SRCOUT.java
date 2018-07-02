@@ -18,12 +18,12 @@ import com.wning.demo.R;
 /**
  * 橡皮擦效果
  */
-public class EraserView_SRCOUT extends BaseView {
+public class EraserCustomView_SRCOUT extends BaseCustomView {
     private Paint mBitPaint;
     private Bitmap BmpDST,BmpSRC;
     private Path mPath;
     private float mPreX,mPreY;
-    public EraserView_SRCOUT(Context context, AttributeSet attrs) {
+    public EraserCustomView_SRCOUT(Context context, AttributeSet attrs) {
         super(context, attrs);
 
         setLayerType(View.LAYER_TYPE_SOFTWARE, null);

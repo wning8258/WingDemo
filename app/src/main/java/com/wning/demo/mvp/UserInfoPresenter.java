@@ -3,8 +3,8 @@ package com.wning.demo.mvp;
 import android.os.Handler;
 import android.os.Looper;
 
-import com.wning.demo.mvp.base.BasePresenter;
 import com.wning.demo.mvp.biz.UserInfoBiz;
+import com.wning.demo.service.presenter.BasePresenter;
 
 /**
  * Created by wning on 16/7/17.

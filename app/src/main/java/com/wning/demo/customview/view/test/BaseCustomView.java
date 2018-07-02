@@ -12,15 +12,15 @@ import android.view.View;
  * Created by wning on 2017/3/2.
  */
 
-public abstract  class BaseView extends View {
+public abstract  class BaseCustomView extends View {
 
     protected String info;
 
-    public BaseView(Context context) {
+    public BaseCustomView(Context context) {
         super(context);
     }
 
-    public BaseView(Context context, @Nullable AttributeSet attrs) {
+    public BaseCustomView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
 

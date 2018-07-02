@@ -21,13 +21,13 @@ import android.graphics.Region.Op;
 import android.graphics.RegionIterator;
 import android.util.AttributeSet;
 
-public class RegionOPView extends BaseView {
+public class RegionOPCustomView extends BaseCustomView {
 
-    public RegionOPView(Context context) {
+    public RegionOPCustomView(Context context) {
         super(context);
     }
 
-    public RegionOPView(Context context, AttributeSet attrs) {
+    public RegionOPCustomView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 

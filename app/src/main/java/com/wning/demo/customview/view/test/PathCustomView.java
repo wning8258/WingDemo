@@ -18,17 +18,17 @@ import android.util.AttributeSet;
  * 这是浙江齐聚科技有限公司未公开的私有源代码, 本文件及相关内容未经浙江齐聚科技有限公司
  * 事先书面同意，不允许向任何第三方透露，泄密部分或全部; 也,不允许任何形式的私自备份。
  *************************************************************************************/
-public class PathView extends BaseView{
+public class PathCustomView extends BaseCustomView {
 
     private Paint mPaint;
 
 
-    public PathView(Context context) {
+    public PathCustomView(Context context) {
         super(context);
         init();
     }
 
-    public PathView(Context context, AttributeSet attrs) {
+    public PathCustomView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }

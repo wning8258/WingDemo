@@ -11,16 +11,20 @@
     android:orientation="vertical"
     tools:context=".net.okhttp.OkHttpActivity">
 
-    <Button
-        android:id="@+id/btn1"
+    <TextView
+        android:id="@+id/tv_start"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="get 异步请求"/>
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:background="@android:color/holo_blue_dark"
+        android:text="点击开始"/>
 
-    <Button
-        android:id="@+id/btn2"
+    <TextView
+        android:id="@+id/tv_result"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="get 阻塞请求"/>
+        android:layout_height="300dp"
+        android:gravity="center"
+        android:background="@android:color/holo_orange_dark"
+        android:text="这里显示结果"/>
 
 </LinearLayout>

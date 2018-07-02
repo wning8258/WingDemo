@@ -1,4 +1,4 @@
-package com.wning.demo.net.retrofit;
+package com.wning.demo.service.entity;
 
 import java.util.List;
 

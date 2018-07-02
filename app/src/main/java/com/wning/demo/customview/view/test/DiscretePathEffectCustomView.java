@@ -17,15 +17,15 @@ import android.util.AttributeSet;
  * 这是浙江齐聚科技有限公司未公开的私有源代码, 本文件及相关内容未经浙江齐聚科技有限公司
  * 事先书面同意，不允许向任何第三方透露，泄密部分或全部; 也,不允许任何形式的私自备份。
  *************************************************************************************/
-public class DiscretePathEffectView extends BaseView {
+public class DiscretePathEffectCustomView extends BaseCustomView {
 
 
-    public DiscretePathEffectView(Context context) {
+    public DiscretePathEffectCustomView(Context context) {
         super(context);
         init();
     }
 
-    public DiscretePathEffectView(Context context, AttributeSet attrs) {
+    public DiscretePathEffectCustomView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }

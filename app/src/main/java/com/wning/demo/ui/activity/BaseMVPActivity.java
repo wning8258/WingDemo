@@ -1,7 +1,11 @@
-package com.wning.demo.mvp.base;
+package com.wning.demo.ui.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+
+import com.wning.demo.service.presenter.BasePresenter;
+import com.wning.demo.service.view.BaseView;
+
 
 /**
  * Created by wning on 16/7/17.
@@ -18,14 +22,6 @@ public abstract class BaseMVPActivity<V extends BaseView,T extends BasePresenter
         presenter = initPresenter();
         presenter.attach((V)this);
     }
-
-//    @Override
-//    protected void onResume() {
-//        super.onResume();
-//        presenter.attach((V)this);
-//    }
-
-
 
 
     @Override

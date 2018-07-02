@@ -16,18 +16,18 @@ import com.wning.demo.R;
  * Created by wning on 2017/3/3.
  */
 
-public class ColorMatrixColorFilterView extends BaseView {
+public class ColorMatrixColorFilterCustomView extends BaseCustomView {
 
     private Bitmap bitmap;
 
     private Paint mPaint = new Paint();
 
-    public ColorMatrixColorFilterView(Context context) {
+    public ColorMatrixColorFilterCustomView(Context context) {
         super(context);
         init();
     }
 
-    public ColorMatrixColorFilterView(Context context, AttributeSet attrs) {
+    public ColorMatrixColorFilterCustomView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }

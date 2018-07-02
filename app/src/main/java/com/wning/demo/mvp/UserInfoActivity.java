@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.wning.demo.R;
-import com.wning.demo.mvp.base.BaseMVPActivity;
+import com.wning.demo.ui.activity.BaseMVPActivity;
 import com.wning.demo.utils.UIUtils;
 
 public class UserInfoActivity extends BaseMVPActivity<UserInfoView,UserInfoPresenter> implements UserInfoView, View.OnClickListener {
