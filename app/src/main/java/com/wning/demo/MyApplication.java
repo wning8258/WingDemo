@@ -6,8 +6,10 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Build;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.Wing;
 import com.facebook.drawee.backends.pipeline.Fresco;
+import com.guagua.modules.utils.LogUtils;
 import com.nostra13.universalimageloader.cache.memory.impl.LRULimitedMemoryCache;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -54,6 +56,12 @@ public class MyApplication  extends Application{
         mInstance=this;
         LeakCanary.install(this);
         initImageLoader();
+
+        if (LogUtils.ISDEBUG) {           // 这两行必须写在init之前，否则这些配置在init过程中将无效
+            ARouter.openLog();     // 打印日志
+            ARouter.openDebug();   // 开启调试模式(如果在InstantRun模式下运行，必须开启调试模式！线上版本需要关闭,否则有安全风险)
+        }
+        ARouter.init(this); // 尽可能早，推荐在Application中初始化
 
         RequestManager.init(this);
 

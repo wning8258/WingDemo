@@ -41,6 +41,7 @@ public class InterceptLayout extends LinearLayout {
                 break;
         }
         return super.dispatchTouchEvent(ev);
+     //   return true;
     }
 
 
@@ -51,9 +52,11 @@ public class InterceptLayout extends LinearLayout {
             case MotionEvent.ACTION_DOWN:
                 LogUtils.i(TAG,"onInterceptTouchEvent ACTION_DOWN");
                 break;
+           //     return true; //拦截掉之后，后续所有的onInterceptTouchEvent都不再执行了（即父view拦截掉事件后之后，不再可能把事件重新交给子view）
             case MotionEvent.ACTION_MOVE:
                 LogUtils.i(TAG,"onInterceptTouchEvent ACTION_MOVE");
                 break;
+               // return true;  //拦截掉之后，后续所有的onInterceptTouchEvent都不再执行了（即父view拦截掉事件后之后，不再可能把事件重新交给子view）
             case MotionEvent.ACTION_UP:
                 LogUtils.i(TAG,"onInterceptTouchEvent ACTION_UP");
                 break;

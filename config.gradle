@@ -22,7 +22,7 @@ ext {
             umeng:"com.umeng.analytics:analytics:5.6.7",
             nineoldandroids:"com.nineoldandroids:library:2.4.0",
             rebound:"com.facebook.rebound:rebound:0.3.8",
-            okhttp:"com.squareup.okhttp3:okhttp:3.4.1",
+            okhttp:"com.squareup.okhttp3:okhttp:3.12.0",
             fresco:"com.facebook.fresco:fresco:0.12.0",
             eventbus:"org.greenrobot:eventbus:3.0.0",
             gson:"com.google.code.gson:gson:2.2.4",

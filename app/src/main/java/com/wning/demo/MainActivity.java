@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.example.Wing;
 import com.guagua.modules.utils.Utils;
+import com.wning.demo.arouter.ARouterEntranceActivity;
 import com.wning.demo.customview.activity.ChoreographerActivity;
 import com.wning.demo.customview.activity.CoordinatorLayoutActivity;
 import com.wning.demo.customview.activity.CustomAnimActivity;
@@ -126,6 +127,7 @@ public class MainActivity extends BaseActivity {
         items.add(new DataItem().setTitle("MVP").setClazz(UserInfoActivity.class));
         items.add(new DataItem().setTitle("Dagger2").setClazz(Dagger2Activity.class));
         items.add(new DataItem().setTitle("Fresco Producer&Consumer").setClazz(ProducerActivity.class));
+        items.add(new DataItem().setTitle("Arouter").setClazz(ARouterEntranceActivity.class));
 
         dataItems.add(new DataList().setTitle("架构").setList(items));
     }

@@ -12,6 +12,12 @@ android {
         targetSdkVersion rootProject.ext.android.AndroidTargetSdkVersion
         versionCode 1
         versionName "1.0"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
     }
     buildTypes {
         release {
@@ -24,6 +30,10 @@ android {
         main {
             jniLibs.srcDirs = ['libs']
         }
+    }
+
+    dataBinding {
+        enabled true
     }
 }
 
@@ -66,4 +76,9 @@ dependencies {
 
    // debugImplementation 'com.amitshekhar.android:debug-db:1.0.0' //浏览器中查看数据库
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+
+    // 替换成最新版本, 需要注意的是api
+    // 要与compiler匹配使用，均使用最新版可以保证兼容
+    compile 'com.alibaba:arouter-api:1.4.1'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
 }

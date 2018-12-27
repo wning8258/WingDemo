@@ -89,7 +89,12 @@ public class OkHttpActivity extends BaseActivity {
      * @return
      */
     public static OkHttpClient genericClient() {
+
+        OkHttpClient client1=new OkHttpClient();
+
+
         OkHttpClient httpClient = new OkHttpClient.Builder()
+                //.cache()
                 .addInterceptor(new Interceptor() {
                     @Override
                     public okhttp3.Response intercept(Chain chain) throws IOException {
