@@ -2,7 +2,6 @@ package com.wning.demo;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,6 +30,7 @@ import com.wning.demo.dagger2.Dagger2Activity;
 import com.wning.demo.gifteffect.QIQIGiftEffectActivity;
 import com.wning.demo.matrix.MatrixActivity;
 import com.wning.demo.mvp.UserInfoActivity;
+import com.wning.demo.mvvm.DataBindingActivity;
 import com.wning.demo.net.okhttp.OkHttpActivity;
 import com.wning.demo.net.retrofit.RetrofitActivity;
 import com.wning.demo.net.volley.VolleyActivity;
@@ -39,7 +39,7 @@ import com.wning.demo.rxjava.RxJava2Activity;
 
 import java.util.ArrayList;
 
-import butterknife.BindView;
+import androidx.appcompat.widget.Toolbar;
 
 @Wing
 public class MainActivity extends BaseActivity {
@@ -51,14 +51,12 @@ public class MainActivity extends BaseActivity {
 //
 //    private ArrayList<DataItem> dataItems;
 
-    @BindView(R.id.list)
     ExpandableListView listView;
 
     private ExpandableAdapter adapter;
 
     private ArrayList<DataList> dataItems;
 
-    @BindView(R.id.toolbar)
     Toolbar toolbar;
 
     @Override
@@ -70,6 +68,10 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
        // setContentView(R.layout.activity_main);
+
+        listView=findViewById(R.id.list);
+        toolbar=findViewById(R.id.toolbar);
+
         initData();
         initRecyclerView();
      //LogPrinter.enable(this);
@@ -128,6 +130,7 @@ public class MainActivity extends BaseActivity {
         items.add(new DataItem().setTitle("Dagger2").setClazz(Dagger2Activity.class));
         items.add(new DataItem().setTitle("Fresco Producer&Consumer").setClazz(ProducerActivity.class));
         items.add(new DataItem().setTitle("Arouter").setClazz(ARouterEntranceActivity.class));
+        items.add(new DataItem().setTitle("DataBinding").setClazz(DataBindingActivity.class));
 
         dataItems.add(new DataList().setTitle("架构").setList(items));
     }

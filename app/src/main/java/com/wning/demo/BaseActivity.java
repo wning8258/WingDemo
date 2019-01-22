@@ -3,14 +3,14 @@ package com.wning.demo;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
 import com.wning.demo.logprint.LogPrinter;
 
-import butterknife.ButterKnife;
+import androidx.appcompat.app.AppCompatActivity;
+
 
 /**
  * Created by Administrator on 2016/7/21.
@@ -24,7 +24,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         TAG=getClass().getSimpleName();
         setContentView(getLayoutId());
-        ButterKnife.bind(this);
         if(isNeedLogPrinter()){
             LogPrinter.enable(this);
         }

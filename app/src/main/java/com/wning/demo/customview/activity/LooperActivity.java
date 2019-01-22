@@ -11,12 +11,8 @@ import com.wning.demo.BaseActivity;
 import com.wning.demo.R;
 import com.wning.demo.logprint.LogPrinter;
 
-import butterknife.BindView;
-import butterknife.OnClick;
+public class LooperActivity extends BaseActivity implements View.OnClickListener {
 
-public class LooperActivity extends BaseActivity {
-
-    @BindView(R.id.test)
     Button test;
 
 
@@ -31,6 +27,9 @@ public class LooperActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        test=findViewById(R.id.test);
+        test.setOnClickListener(this);
 
         LogPrinter.enable(this);
 
@@ -53,13 +52,19 @@ public class LooperActivity extends BaseActivity {
         mChildHandler.getLooper().quit();
     }
 
-    @OnClick(R.id.test)
-    public void Onclick(View v){
-        Message childMsg = mChildHandler.obtainMessage();
-        childMsg. obj = mMainHandler.getLooper().getThread().getName() + " says Hello";
-        mChildHandler.sendMessage(childMsg);
 
-        LogPrinter. log("Main Thead Send a message to the child thread - " + (String)childMsg. obj);
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.test:
+                Message childMsg = mChildHandler.obtainMessage();
+                childMsg. obj = mMainHandler.getLooper().getThread().getName() + " says Hello";
+                mChildHandler.sendMessage(childMsg);
+
+                LogPrinter. log("Main Thead Send a message to the child thread - " + (String)childMsg. obj);
+                break;
+        }
     }
 
     private class ChildThead extends Thread{

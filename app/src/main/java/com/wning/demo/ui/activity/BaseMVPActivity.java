@@ -1,7 +1,7 @@
 package com.wning.demo.ui.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.wning.demo.service.presenter.BasePresenter;
 import com.wning.demo.service.view.BaseView;

@@ -1,7 +1,7 @@
 package com.wning.demo.customview.activity.bezier;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.wning.demo.R;
 

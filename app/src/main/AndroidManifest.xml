@@ -96,6 +96,7 @@
         <activity android:name=".producer.ProducerActivity" android:theme="@style/AppTheme"/>
         <activity android:name=".arouter.ARouterEntranceActivity" android:theme="@style/AppTheme"/>
         <activity android:name=".arouter.ARouterActivity" android:theme="@style/AppTheme"/>
+        <activity android:name=".mvvm.DataBindingActivity" android:theme="@style/AppTheme"/>
     </application>
 
 </manifest>

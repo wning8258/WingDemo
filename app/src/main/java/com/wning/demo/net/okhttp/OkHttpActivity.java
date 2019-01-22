@@ -20,8 +20,6 @@ import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
-import butterknife.BindView;
-import butterknife.OnClick;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
@@ -40,20 +38,16 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class OkHttpActivity extends BaseActivity {
+public class OkHttpActivity extends BaseActivity implements View.OnClickListener {
 
     private static final String TAG = "OkHttpActivity";
 
-    @BindView(R.id.btn1)
     Button btn1;
 
-    @BindView(R.id.btn2)
     Button btn2;
 
-    @BindView(R.id.btn3)
     Button btn3;
 
-    @BindView(R.id.btn4)
     Button btn4;
 
     private OkHttpClient mClient;
@@ -74,6 +68,15 @@ public class OkHttpActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        btn1=findViewById(R.id.btn1);
+        btn1.setOnClickListener(this);
+        btn2=findViewById(R.id.btn2);
+        btn2.setOnClickListener(this);
+        btn3=findViewById(R.id.btn3);
+        btn3.setOnClickListener(this);
+        btn4=findViewById(R.id.btn4);
+        btn4.setOnClickListener(this);
 
 //        mClient= new OkHttpClient.Builder()
 //                .build();
@@ -131,7 +134,7 @@ public class OkHttpActivity extends BaseActivity {
         return finalUrl;
     }
 
-    @OnClick({R.id.btn1, R.id.btn2, R.id.btn3, R.id.btn4})
+    @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn1:  //get异步请求enqueue
@@ -311,5 +314,10 @@ public class OkHttpActivity extends BaseActivity {
 
                 break;
         }
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
     }
 }

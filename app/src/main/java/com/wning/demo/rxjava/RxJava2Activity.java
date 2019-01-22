@@ -6,9 +6,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Looper;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,7 +29,9 @@ import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import butterknife.BindView;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import io.reactivex.BackpressureStrategy;
 import io.reactivex.Flowable;
 import io.reactivex.FlowableEmitter;
@@ -584,12 +583,11 @@ public class RxJava2Activity extends AppCompatActivity  {
 
     class MyHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.btn)
         TextView btn;
 
         public MyHolder(View itemView) {
             super(itemView);
-            btn = (TextView) itemView.findViewById(R.id.btn);
+            btn =  itemView.findViewById(R.id.btn);
         }
     }
 

@@ -14,18 +14,14 @@ import com.wning.demo.customview.view.FansGroupUpTextView;
 import com.wning.demo.customview.view.PullToRefreshBearView;
 import com.wning.demo.customview.view.VideoLoadingSpringView;
 
-import butterknife.BindView;
 
 public class CustomAnimActivity extends BaseActivity {
 
 
-    @BindView(R.id.bear)
      PullToRefreshBearView bearView;
 
-    @BindView(R.id.tv_argb)
     TextView tv_argb;
 
-    @BindView(R.id.loading_spring)
     VideoLoadingSpringView mSpringView;
 
     private FansGroupUpTextView fans_group_text1,fans_group_text2;
@@ -41,9 +37,11 @@ public class CustomAnimActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
-        fans_group_text1= (FansGroupUpTextView) findViewById(R.id.fans_group_text1);
-        fans_group_text2= (FansGroupUpTextView) findViewById(R.id.fans_group_text2);
+        bearView=findViewById(R.id.bear);
+        tv_argb=findViewById(R.id.tv_argb);
+        mSpringView=findViewById(R.id.loading_spring);
+        fans_group_text1=  findViewById(R.id.fans_group_text1);
+        fans_group_text2=  findViewById(R.id.fans_group_text2);
 
 
 //        fans_group_text1.setBackgroundResource(R.drawable.qiqi_room_fansgroup_up_toast);
