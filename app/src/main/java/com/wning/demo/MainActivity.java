@@ -30,7 +30,7 @@ import com.wning.demo.dagger2.Dagger2Activity;
 import com.wning.demo.gifteffect.QIQIGiftEffectActivity;
 import com.wning.demo.matrix.MatrixActivity;
 import com.wning.demo.mvp.UserInfoActivity;
-import com.wning.demo.mvvm.DataBindingActivity;
+import com.wning.demo.architecture.DataBindingActivity;
 import com.wning.demo.net.okhttp.OkHttpActivity;
 import com.wning.demo.net.retrofit.RetrofitActivity;
 import com.wning.demo.net.volley.VolleyActivity;

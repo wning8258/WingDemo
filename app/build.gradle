@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion rootProject.ext.android.AndroidCompileSdkVersion
-  //  buildToolsVersion rootProject.ext.android.AndroidBuildToolsVersion
+    //  buildToolsVersion rootProject.ext.android.AndroidBuildToolsVersion
 
     useLibrary 'org.apache.http.legacy'  //6.0以上使用httpclient
 
@@ -30,6 +30,11 @@ android {
         main {
             jniLibs.srcDirs = ['libs']
         }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     dataBinding {
@@ -74,13 +79,31 @@ dependencies {
     implementation 'com.google.dagger:dagger:2.11-rc2'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.11-rc2'
 
-   // debugImplementation 'com.amitshekhar.android:debug-db:1.0.0' //浏览器中查看数据库
+    // debugImplementation 'com.amitshekhar.android:debug-db:1.0.0' //浏览器中查看数据库
     implementation 'androidx.constraintlayout:constraintlayout:1.1.2'
 
     // 替换成最新版本, 需要注意的是api
     // 要与compiler匹配使用，均使用最新版可以保证兼容
     implementation 'com.alibaba:arouter-api:1.4.1'
     annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
+
+
+    def lifecycle_version = "2.0.0"
+
+    // ViewModel and LiveData
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+//    // alternatively - just ViewModel
+//    implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version" // use -ktx for Kotlin
+//    // alternatively - just LiveData
+//    implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
+//    // alternatively - Lifecycles only (no ViewModel or LiveData). Some UI
+//    //     AndroidX libraries use this lightweight import for Lifecycle
+//    implementation "androidx.lifecycle:lifecycle-runtime:$lifecycle_version"
+//
+    //  annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version" // use kapt for Kotlin
+    // alternately - if using Java8, use the following instead of lifecycle-compiler
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+
 
 
 }

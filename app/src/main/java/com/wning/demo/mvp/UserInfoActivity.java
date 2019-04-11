@@ -22,7 +22,7 @@ public class UserInfoActivity extends BaseMVPActivity<UserInfoView,UserInfoPrese
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mvp);
 
-        btn = (Button) findViewById(R.id.btn);
+        btn =  findViewById(R.id.btn);
         btn.setOnClickListener(this);
     }
 
