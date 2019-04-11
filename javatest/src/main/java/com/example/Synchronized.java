@@ -4,6 +4,7 @@ class A{
     public synchronized void methodA(){  //对A的同一个实例加锁，如果不是同一个A的同一个实例，不会等待
         System.out.println("methodA");
         try {
+            System.out.println("sleep 5000");
             Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -25,6 +26,7 @@ class A{
 
 }
 
+
 public class Synchronized {
 
     public static void main(String[] args){
@@ -32,7 +34,6 @@ public class Synchronized {
         Thread thread1=new Thread(new Runnable() {
             @Override
             public void run() {
-                // A a=new A();
                 a.methodA();
                 a.methodB();
             }
@@ -42,7 +43,6 @@ public class Synchronized {
         Thread thread2=new Thread(new Runnable() {
             @Override
             public void run() {
-               // A a=new A();
                 a.methodA();
                 a.methodB();
             }

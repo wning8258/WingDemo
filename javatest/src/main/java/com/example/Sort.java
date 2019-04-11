@@ -5,13 +5,14 @@ import java.util.Arrays;
 public class Sort {
     public static void main(String[] args){
 
-        int a[]={6,4,3,5,2,8,7,1};
+      //  int a[]={6,4,3,5,2,8,7,1};
+        int a[]={6,1,2,7,9};
        // int b[]={1,2,3,4,5,6,7,8};
 
         Sort sort=new Sort();
        //  sort.bubbleSort(a);
-     //   sort.quickSort(a,0,a.length-1);
-        sort.choiceSort(a);
+       sort.quickSort(a,0,a.length-1);
+      //  sort.choiceSort(a);
 
         //System.out.println("result :"+ Arrays.toString(a));
         //int pos=sort.binarySearch(b,8);
@@ -66,7 +67,7 @@ public class Sort {
      */
     public void quickSort(int[] a,int left,int right){
         int temp,t,i,j;
-        if(left>right){
+        if(left>=right){
             return;
         }
 
@@ -90,7 +91,7 @@ public class Sort {
         }
         a[left]=a[i];
         a[i]=temp;
-        System.out.println(" :"+ Arrays.toString(a));
+        System.out.println(i+" :"+j+" ,"+ Arrays.toString(a));
 
         quickSort(a,left,i-1);
         quickSort(a,i+1,right);
