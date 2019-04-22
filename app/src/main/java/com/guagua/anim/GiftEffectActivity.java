@@ -1,16 +1,16 @@
 package com.guagua.anim;
 
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
 import com.guagua.qiqi.gifteffect.BaseSurfaceView;
+import com.wning.demo.BaseActivity;
 import com.wning.demo.R;
 import com.wning.demo.gifteffect.GiftAnimManager;
 
-public class GiftEffectActivity extends AppCompatActivity implements View.OnClickListener {
+public class GiftEffectActivity extends BaseActivity implements View.OnClickListener {
 
     private BaseSurfaceView baseSurfaceView;
     private FrameLayout baseSurfaceViewContainer;
@@ -21,13 +21,10 @@ public class GiftEffectActivity extends AppCompatActivity implements View.OnClic
     private Button btn5;
     private Button btn6;
     private Button btn7;
-    //GiftAnimManager.getInstance(RoomActivity.this).playShapeAnim(senderName, presentId.m_oRecvNick.m_szNick, presentId.m_iGoodsCount,
-    //"个", gift.giftSrc, gift.giftPrice);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gift_effect);
 
         baseSurfaceViewContainer = (FrameLayout) findViewById(R.id.gift_surface_container);
         baseSurfaceView = (BaseSurfaceView) findViewById(R.id.gift_surface);
@@ -47,6 +44,11 @@ public class GiftEffectActivity extends AppCompatActivity implements View.OnClic
         btn7= (Button) findViewById(R.id.btn7);
         btn7.setOnClickListener(this);
 
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_gift_effect;
     }
 
     @Override

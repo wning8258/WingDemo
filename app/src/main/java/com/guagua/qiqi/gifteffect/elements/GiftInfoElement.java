@@ -118,7 +118,7 @@ public class GiftInfoElement extends Element {
         bitmapsNumber = new Bitmap[10];
         for (int i = 0; i < 10; i++) {
             bitmapsNumber[i] = BitmapUtils.decodeBitmap(iScene.mContext,
-                    iScene.mContext.getResources().getIdentifier("number_" + i, "mipmap", iScene.mContext.getPackageName()));
+                    iScene.mContext.getResources().getIdentifier("number_" + i, "drawable", iScene.mContext.getPackageName()));
             numberheight = bitmapsNumber[i].getHeight();
             numberWidth = bitmapsNumber[i].getWidth();
         }
