@@ -37,7 +37,7 @@ public class AvoidXfermodeCustomView extends BaseCustomView {
 
     private void init() {
         mPaint = new Paint();
-        mBmp = BitmapFactory.decodeResource(getResources(), R.mipmap.dog);
+        mBmp = BitmapFactory.decodeResource(getResources(), R.drawable.dog);
         setLayerType(View.LAYER_TYPE_SOFTWARE, null);
     }
 

@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:background="@mipmap/ufo_background" >
+        android:background="@drawable/ufo_background" >
     </FrameLayout>
 	<Button 
 	    android:id="@+id/act_gift_button"

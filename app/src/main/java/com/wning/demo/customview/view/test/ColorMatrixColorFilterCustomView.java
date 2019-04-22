@@ -33,7 +33,7 @@ public class ColorMatrixColorFilterCustomView extends BaseCustomView {
     }
 
     private void init() {
-        bitmap= BitmapFactory.decodeResource(getResources(), R.mipmap.dog);
+        bitmap= BitmapFactory.decodeResource(getResources(), R.drawable.dog);
         mPaint.setAntiAlias(true);
     }
 

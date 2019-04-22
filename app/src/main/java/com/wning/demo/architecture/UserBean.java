@@ -1,6 +1,10 @@
-package com.wning.demo.mvvm;
+package com.wning.demo.architecture;
 
-public class UserBean {
+import androidx.databinding.BaseObservable;
+import androidx.databinding.Bindable;
+import androidx.databinding.library.baseAdapters.BR;
+
+public class UserBean extends BaseObservable {
     private String name; //姓名
     private int age; //年龄
 
@@ -9,19 +13,24 @@ public class UserBean {
         this.age = age;
     }
 
+    @Bindable
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
+        notifyPropertyChanged(BR.name);
     }
 
+    @Bindable
     public int getAge() {
         return age;
     }
 
+    @Bindable
     public void setAge(int age) {
         this.age = age;
+        notifyPropertyChanged(BR.age);
     }
 }

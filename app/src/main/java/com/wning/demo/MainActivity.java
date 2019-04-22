@@ -77,7 +77,7 @@ public class MainActivity extends BaseActivity {
      //LogPrinter.enable(this);
 
         setSupportActionBar(toolbar);
-        toolbar.setLogo(R.mipmap.ic_launcher);
+        toolbar.setLogo(R.drawable.ic_launcher);
     }
 
     @Override

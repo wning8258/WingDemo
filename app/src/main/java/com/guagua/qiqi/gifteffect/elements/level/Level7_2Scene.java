@@ -74,7 +74,7 @@ public class Level7_2Scene extends IScene implements BitmapOnDrawListener {
 		Rect infoPanelRect = null;
 		Rect measureRect = null;
 		Path clipPath = null;
-		Bitmap bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.mipmap.level_7_bg);
+		Bitmap bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.level_7_bg);
 		BitmapShape bitmapShape;
 		if (bitmap != null) {
 			//修改默认的北京基准点，默认居中
@@ -112,14 +112,14 @@ public class Level7_2Scene extends IScene implements BitmapOnDrawListener {
 
 			ElfFactory.endowBackgroup(bg, 1f, infoPanelRect.left, infoPanelRect.top);
 			//初始化背景里渐变的
-			bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_7_bg_bg);
+			bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.level_7_bg_bg);
 			if (bitmap != null) {
 				bitmapShape = new BitmapShape(bitmap, this);
 				ElfFactory.endowBackgroupBack2(bitmapShape, (assembleBitmapWidth - bitmap.getWidth()) / 2,
 						(assembleBitmapHeight - bitmap.getHeight()) / 2, 0f, 0.2f, 0.8f, 1);
 				infoPanel.addInnerElement(bitmapShape);
 			}
-			bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_7_bg_front);
+			bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.level_7_bg_front);
 			if (bitmap != null) {
 				bitmapShape = new BitmapShape(bitmap, this);
 				ElfFactory.endowBackgroupBack(bitmapShape, (assembleBitmapWidth - bitmap.getWidth()) / 2,
@@ -127,7 +127,7 @@ public class Level7_2Scene extends IScene implements BitmapOnDrawListener {
 				infoPanel.addInnerElement(bitmapShape);
 			}
 
-			bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_7_money_bi);
+			bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.level_7_money_bi);
 			if (bitmap != null) {
 				for (int i = 0; i < 10; i++) {
 					bitmapShape = new BitmapShape(bitmap, this);
@@ -144,7 +144,7 @@ public class Level7_2Scene extends IScene implements BitmapOnDrawListener {
 
 		}
 //		//初始化钱袋
-		bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.mipmap.level_7_money);
+		bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.level_7_money);
 		if (bitmap != null) {
 			bitmapShape = new BitmapShape(bitmap, this);
 			ElfFactory.endowLevel7MoneyDai(bitmapShape, measureRect);
@@ -158,7 +158,7 @@ public class Level7_2Scene extends IScene implements BitmapOnDrawListener {
 		specialRect.top = measureRect.top - infoPanelRect.height() > 0 ? measureRect.top - infoPanelRect.height() : 0;
 		specialRect.bottom = measureRect.top - PXUtils.dp2px(mContext, 2);
 
-		bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.mipmap.level_7_money_bi);
+		bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.level_7_money_bi);
 		if (bitmap != null) {
 			for (int i = 0; i < 10; i++) {
 				bitmapShape = new BitmapShape(bitmap, this);
@@ -167,7 +167,7 @@ public class Level7_2Scene extends IScene implements BitmapOnDrawListener {
 			}
 		}
 //		//初始化背景星星
-		bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.mipmap.level_6_star);
+		bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.level_6_star);
 		if (bitmap != null) {
 			Rect rectStar = new Rect(measureRect);
 			rectStar.top = rectStar.top - bitmap.getHeight() / 2;
@@ -180,7 +180,7 @@ public class Level7_2Scene extends IScene implements BitmapOnDrawListener {
 				infoPanel.addInnerElement(bitmapShape);
 			}
 		}
-		bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_7_yellow_circle);
+		bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.level_7_yellow_circle);
 		final Rect real = BitmapUtils.correctBitmapRect(bitmap, measureRect, 0.8f);
 		real.bottom = real.top + PXUtils.dp2px(mContext, 10);
 		for (int i = 0; i < 15; i++) {
@@ -195,7 +195,7 @@ public class Level7_2Scene extends IScene implements BitmapOnDrawListener {
 		}
 //  
 //		//初始化星星级别.
-		bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.mipmap.level_7_s);
+		bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.level_7_s);
 		if (bitmap != null) {
 			for (int i = 0; i < 7; i++) {
 				bitmapShape = new BitmapShape(bitmap, this);
@@ -209,11 +209,11 @@ public class Level7_2Scene extends IScene implements BitmapOnDrawListener {
 			GiftInfoElement element = new GiftInfoElement(this, sceneInfo, measureRect);
 			infoPanel.addInnerElement(element);
 		}
-		bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_10_bg_light);
+		bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.level_10_bg_light);
 
 		if (bitmap != null) {
 			bitmapShape = new BitmapShape(bitmap, this);
-			bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_10_row_light);
+			bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.level_10_row_light);
 			BitmapShape bs=new BitmapShape(bitmap, this);
 			ElfFactory.endowLevel10BGLight(bitmapShape,bs,measureRect, 100, 4000,mContext);
 			bitmapShape.setBitmapOnDrawListener(infoPanel);
@@ -223,7 +223,7 @@ public class Level7_2Scene extends IScene implements BitmapOnDrawListener {
 		}
 		
 		{
-			bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_10_light_bg);
+			bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.level_10_light_bg);
 			Rect lightBGRect = new Rect((mWidth - bitmap.getWidth()) / 2, (mHeight - bitmap.getHeight()) / 2, (mWidth - bitmap.getWidth()) / 2
 					+ bitmap.getWidth(), (mHeight - bitmap.getHeight()) / 2 + bitmap.getHeight());
 
@@ -241,7 +241,7 @@ public class Level7_2Scene extends IScene implements BitmapOnDrawListener {
 //			rectF.top = 0;
 			//横向的光线，上线摆动
 			//横向光线的rect区域
-			bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_10_row_light);
+			bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.level_10_row_light);
 			if (bitmap != null) {
 				bitmapShape = new BitmapShape(bitmap, this);
 				ElfFactory.endowLevel10RowLight(bitmapShape, panelRect, showTimeOffset, rowLightShowTime);
@@ -249,7 +249,7 @@ public class Level7_2Scene extends IScene implements BitmapOnDrawListener {
 			}
 
 			//星蕴
-			bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_10_s3);
+			bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.level_10_s3);
 			for (int i = 0; i < 30; i++) {
 				bitmapShape = new BitmapShape(bitmap, this);
 //                ElfFactory.endowLevel10AlphaStars(bitmapShape, panelRect, MathCommonAlg.randomFloat(.8f, 2f), starLightsTimeOffset, starLightsTime);
@@ -261,13 +261,13 @@ public class Level7_2Scene extends IScene implements BitmapOnDrawListener {
 				bitmap = BitmapUtils
 						.decodeBitmap(
 								mContext,
-								mContext.getResources().getIdentifier("level_10_d" + MathCommonAlg.rangeRandom(1, 20), "mipmap",
+								mContext.getResources().getIdentifier("level_10_d" + MathCommonAlg.rangeRandom(1, 20), "drawable",
 										mContext.getPackageName()));
 				bitmapShape = new BitmapShape(bitmap, this);
 				ElfFactory.endowLevel10DownLight(bitmapShape, panelRect, downStarOffset, downStarDuration);
 				addShape(bitmapShape);
 			}
-			bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_10_star);
+			bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.level_10_star);
 			for (int i = 0; i < 5; i++) {
 				bitmapShape = new BitmapShape(bitmap, this);
 				ElfFactory.endowLevel10DownLight(bitmapShape, panelRect, downStarOffset, downStarDuration);

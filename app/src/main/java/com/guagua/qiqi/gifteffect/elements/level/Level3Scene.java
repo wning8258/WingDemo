@@ -42,7 +42,7 @@ public class Level3Scene extends IScene implements BitmapOnDrawListener {
 	}
 
 	private void initData() {
-		Bitmap bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.mipmap.level_3_bg);
+		Bitmap bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.level_3_bg);
 		BitmapShape bitmapShape;
 		if (bitmap != null) {
 			//修改默认的北京基准点，默认居中
@@ -56,7 +56,7 @@ public class Level3Scene extends IScene implements BitmapOnDrawListener {
 			ElfFactory.endowBackgroup(bg, 1f, (mWidth - bitmap.getWidth()) / 2, (mHeight - bitmap.getHeight()) / 2);
 			bg.setEnableMatrix(true);
 			//初始化背景里渐变的
-			bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_3_bg_front);
+			bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.level_3_bg_front);
 			if (bitmap != null) {
 				bitmapShape = new BitmapShape(bitmap, this);
 				//测试使用
@@ -67,14 +67,14 @@ public class Level3Scene extends IScene implements BitmapOnDrawListener {
 			//初始化 剪裁区
 			initClipPathAndRect();
 		}
-		bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_2_white_line);
+		bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.level_2_white_line);
 		if (bitmap != null) {
 			bitmapShape = new BitmapShape(bitmap, this);
 			ElfFactory.endowLevelCommonLine(bitmapShape, rect.left, rect.top , rect);
 			bitmapShape.setBitmapOnDrawListener(this);
 			addShape(bitmapShape);
 		}
-		bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_1_yellow_line );
+		bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.level_1_yellow_line );
 		if (bitmap != null) {
 			bitmapShape = new BitmapShape(bitmap, this);
 			ElfFactory.endowLevelCommonLine(bitmapShape, rect.left, rect.top , rect);
@@ -95,7 +95,7 @@ public class Level3Scene extends IScene implements BitmapOnDrawListener {
 			addShape(circleShape);
 		}
 		//初始话星星级别
-		bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.mipmap.level_3_s);
+		bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.level_3_s);
 		if (bitmap != null) {
 			for (int i = 0; i < 3; i++) {
 				bitmapShape = new BitmapShape(bitmap, this);

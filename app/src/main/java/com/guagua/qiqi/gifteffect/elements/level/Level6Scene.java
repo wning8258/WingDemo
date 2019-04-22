@@ -53,7 +53,7 @@ public class Level6Scene extends IScene implements BitmapOnDrawListener {
 	}
 
 	private void initData() {
-		Bitmap bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.mipmap.level_6_bg);
+		Bitmap bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.level_6_bg);
 		BitmapShape bitmapShape;
 		if (bitmap != null) {
 			//修改默认的北京基准点，默认居中
@@ -65,14 +65,14 @@ public class Level6Scene extends IScene implements BitmapOnDrawListener {
 			//初始化背景数据
 			BitmapShape bg = new BitmapShape(bitmap, this);
 			ElfFactory.endowBackgroup(bg, 1f,rect.left, rect.top);
-			bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_6_bg_front);
+			bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.level_6_bg_front);
 			if (bitmap != null) {
 				bitmapShape = new BitmapShape(bitmap, this);
 				ElfFactory.endowBackgroupBack(bitmapShape, (mWidth - bitmap.getWidth()) / 2, (mHeight - bitmap.getHeight()) / 2, 0f,.1f );
 				addShape(bitmapShape);
 			}
 			initClipPathAndRect();
-			bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_6_rose);
+			bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.level_6_rose);
 			if (bitmap != null) {
 				initRose(bitmap);
 			}
@@ -83,7 +83,7 @@ public class Level6Scene extends IScene implements BitmapOnDrawListener {
 		}
 
 		//初始化星星数据,位图本身有长度和高度,同时,图片draw是以做上角为基准点的.
-		bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_6_star);
+		bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.level_6_star);
 		if (bitmap != null) {
 			for (int i = 0; i < 5; i++) {
 				bitmapShape = new BitmapShape(bitmap, this);
@@ -99,7 +99,7 @@ public class Level6Scene extends IScene implements BitmapOnDrawListener {
 		}
 
 		//初始化红心
-		bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_6_red_heart);
+		bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.level_6_red_heart);
 		if (bitmap != null) {
 			for (int i = 0; i < 10; i++) {
 				//因为对图片进行了缩放，所以如果以中心点为缩放点的话，会造成，范围误差
@@ -132,12 +132,12 @@ public class Level6Scene extends IScene implements BitmapOnDrawListener {
 				addShape(b3);
 			}
 //			//下面动态的两个小人
-//			BitmapShape boyBody=new BitmapShape(BitmapUtils.decodeBitmap(mContext, R.mipmap.level_6_boy_body),this);
-//			BitmapShape boyHead=new BitmapShape(BitmapUtils.decodeBitmap(mContext, R.mipmap.level_6_boy_head),this);
-//			BitmapShape boyLeg=new BitmapShape(BitmapUtils.decodeBitmap(mContext, R.mipmap.level_6_boy_leg),this);
-//			BitmapShape girlBody=new BitmapShape(BitmapUtils.decodeBitmap(mContext, R.mipmap.level_6_girl_body),this);
-//			BitmapShape girlHead=new BitmapShape(BitmapUtils.decodeBitmap(mContext, R.mipmap.level_6_girl_head),this);
-//			BitmapShape girlLeg=new BitmapShape(BitmapUtils.decodeBitmap(mContext, R.mipmap.level_6_girl_leg),this);
+//			BitmapShape boyBody=new BitmapShape(BitmapUtils.decodeBitmap(mContext, R.drawable.level_6_boy_body),this);
+//			BitmapShape boyHead=new BitmapShape(BitmapUtils.decodeBitmap(mContext, R.drawable.level_6_boy_head),this);
+//			BitmapShape boyLeg=new BitmapShape(BitmapUtils.decodeBitmap(mContext, R.drawable.level_6_boy_leg),this);
+//			BitmapShape girlBody=new BitmapShape(BitmapUtils.decodeBitmap(mContext, R.drawable.level_6_girl_body),this);
+//			BitmapShape girlHead=new BitmapShape(BitmapUtils.decodeBitmap(mContext, R.drawable.level_6_girl_head),this);
+//			BitmapShape girlLeg=new BitmapShape(BitmapUtils.decodeBitmap(mContext, R.drawable.level_6_girl_leg),this);
 //			//测量两个小人的范围
 //			person.left=rect.left-PXUtils.dp2px(mContext,10);
 //			person.right=rect.left+PXUtils.dp2px(mContext,20);
@@ -151,7 +151,7 @@ public class Level6Scene extends IScene implements BitmapOnDrawListener {
 //			addShape(girlLeg);
 		}
 		//向上漂的白色物体
-		bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_6_snowflake);
+		bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.level_6_snowflake);
 		if (bitmap != null) {
 			for (int i = 0; i < 15; i++) {
 				bitmapShape = new BitmapShape(bitmap, this);
@@ -161,7 +161,7 @@ public class Level6Scene extends IScene implements BitmapOnDrawListener {
 		}
 
 		//初始化星星级别. 
-		bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_6_s);
+		bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.level_6_s);
 		if (bitmap != null) {
 			for (int i = 0; i < 6; i++) {
 				bitmapShape = new BitmapShape(bitmap, this);

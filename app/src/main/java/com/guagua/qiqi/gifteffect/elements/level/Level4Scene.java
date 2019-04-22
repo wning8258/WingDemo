@@ -45,7 +45,7 @@ public class Level4Scene extends IScene implements BitmapOnDrawListener {
 	}
 
 	private void initData() {
-		Bitmap bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.mipmap.level_4_bg);
+		Bitmap bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.level_4_bg);
 		BitmapShape bitmapShape;
 		if (bitmap != null) {
 			//修改默认的北京基准点，默认居中
@@ -59,7 +59,7 @@ public class Level4Scene extends IScene implements BitmapOnDrawListener {
 			ElfFactory.endowBackgroup(bg, 1f, (mWidth - bitmap.getWidth()) / 2, (mHeight - bitmap.getHeight()) / 2);
 			bg.setEnableMatrix(true);
 			//初始化背景里渐变的
-			bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_4_bg_front);
+			bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.level_4_bg_front);
 			if (bitmap != null) {
 				bitmapShape = new BitmapShape(bitmap, this);
 				ElfFactory.endowBackgroupBack(bitmapShape, (mWidth - bitmap.getWidth()) / 2, (mHeight - bitmap.getHeight()) / 2, -0.1f, 0f);
@@ -71,7 +71,7 @@ public class Level4Scene extends IScene implements BitmapOnDrawListener {
 		}
 
 		//初始化雪花数据
-		bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.mipmap.level_4_snow);
+		bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.level_4_snow);
 		if (bitmap != null) {
 			//标准的雪花
 			for (int i = 0; i < 10; i++) {
@@ -87,7 +87,7 @@ public class Level4Scene extends IScene implements BitmapOnDrawListener {
 			}
 		}
 		//初始化气泡数据
-		bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.mipmap.level_6_bubble);
+		bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.level_6_bubble);
 		if (bitmap != null) {
 			for (int i = 0; i < 15; i++) {
 				bitmapShape = new BitmapShape(bitmap, this);
@@ -106,7 +106,7 @@ public class Level4Scene extends IScene implements BitmapOnDrawListener {
 				return true;
 			}
 		};
-		bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.mipmap.level_4_light_point);
+		bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.level_4_light_point);
 		if (bitmap != null) {
 			//初始化横向跑动的小白。
 			for (int i = 0; i < 5; i++) {
@@ -125,14 +125,14 @@ public class Level4Scene extends IScene implements BitmapOnDrawListener {
 			}
 		}
 		//跑动的白线
-		bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_4_white_line);
+		bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.level_4_white_line);
 		if (bitmap != null) {
 			bitmapShape = new BitmapShape(bitmap, this);
 			ElfFactory.endowLevelCommonLine(bitmapShape, rect.left, rect.top - PXUtils.dp2px(mContext, 3f), rect);
 			bitmapShape.setBitmapOnDrawListener(listener);
 			addShape(bitmapShape);
 		}
-		bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.mipmap.level_4_s);
+		bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.level_4_s);
 		if (bitmap != null) {
 			for (int i = 0; i < 4; i++) {
 				bitmapShape = new BitmapShape(bitmap, this);

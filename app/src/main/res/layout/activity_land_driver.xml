@@ -40,7 +40,7 @@
         android:id="@+id/act_land_driver_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@mipmap/ufo_background" >
+        android:background="@drawable/ufo_background" >
     </FrameLayout>
 
 </LinearLayout>

@@ -19,7 +19,7 @@
         android:layout_margin="3.5dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        app:placeholderImage="@mipmap/qiqi_room_game_icon"
+        app:placeholderImage="@drawable/qiqi_room_game_icon"
     />
 
     <ListView

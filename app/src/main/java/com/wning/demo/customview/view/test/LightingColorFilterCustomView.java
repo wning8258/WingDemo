@@ -24,7 +24,7 @@ public class LightingColorFilterCustomView extends BaseCustomView {
     public LightingColorFilterCustomView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         mPaint = new Paint();
-        mBmp = BitmapFactory.decodeResource(getResources(), R.mipmap.btn);
+        mBmp = BitmapFactory.decodeResource(getResources(), R.drawable.btn);
     }
 
 

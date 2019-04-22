@@ -33,7 +33,7 @@ public class TextWave_DSTIN extends View {
         mPaint.setColor(Color.GREEN);
         mPaint.setStyle(Paint.Style.FILL_AND_STROKE);
 
-        BmpSRC = BitmapFactory.decodeResource(getResources(), R.mipmap.text_shade,null);
+        BmpSRC = BitmapFactory.decodeResource(getResources(), R.drawable.text_shade,null);
         BmpDST = Bitmap.createBitmap(BmpSRC.getWidth(), BmpSRC.getHeight(), Bitmap.Config.ARGB_8888);
 
         startAnim();

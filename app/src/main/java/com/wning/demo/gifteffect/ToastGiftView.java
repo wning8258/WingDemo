@@ -66,10 +66,10 @@ public class ToastGiftView extends FrameLayout implements ImageLoadingListener, 
 	private AlphaAnimation out_anim;
 	private LayoutInflater inflater;
 	private int lastViewGroupHeight;
-	private static int[] numberDrawables = new int[] { R.mipmap.gg_number_zero, R.mipmap.gg_number_one, R.mipmap.gg_number_two,
-			R.mipmap.gg_number_three,
-            R.mipmap.gg_number_four, R.mipmap.gg_number_five, R.mipmap.gg_number_six, R.mipmap.gg_number_seven,
-			R.mipmap.gg_number_eight, R.mipmap.gg_number_nine };
+	private static int[] numberDrawables = new int[] { R.drawable.gg_number_zero, R.drawable.gg_number_one, R.drawable.gg_number_two,
+			R.drawable.gg_number_three,
+            R.drawable.gg_number_four, R.drawable.gg_number_five, R.drawable.gg_number_six, R.drawable.gg_number_seven,
+			R.drawable.gg_number_eight, R.drawable.gg_number_nine };
 
 	/**
 	 * 显示礼物Toast

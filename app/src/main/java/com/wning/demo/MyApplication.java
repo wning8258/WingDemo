@@ -97,8 +97,8 @@ public class MyApplication  extends Application{
             threadPoolSize=2;
         }
 
-        defaultDisplayImageOptions = new DisplayImageOptions.Builder().showImageOnLoading(R.mipmap.gg_icon_default_head)
-                .showImageForEmptyUri(R.mipmap.gg_load_fail_big).showImageOnFail(R.mipmap.gg_load_fail_big).cacheInMemory(true)
+        defaultDisplayImageOptions = new DisplayImageOptions.Builder().showImageOnLoading(R.drawable.gg_icon_default_head)
+                .showImageForEmptyUri(R.drawable.gg_load_fail_big).showImageOnFail(R.drawable.gg_load_fail_big).cacheInMemory(true)
                 .bitmapConfig(Bitmap.Config.RGB_565).cacheOnDisk(true).build();
 
         ImageLoaderConfiguration configuration = new ImageLoaderConfiguration.Builder(this).threadPriority(Thread.NORM_PRIORITY - 2)

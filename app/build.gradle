@@ -57,8 +57,7 @@ dependencies {
     implementation googleDependencies.design
 
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.4-beta2'
-//    implementation 'com.jakewharton:butterknife:8.4.0'
-//    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+    implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
 
     implementation otherDependdencies.nineoldandroids //动画兼容2.3
     implementation otherDependdencies.fresco //fresco

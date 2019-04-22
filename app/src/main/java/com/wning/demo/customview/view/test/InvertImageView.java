@@ -25,8 +25,8 @@ public class InvertImageView extends View {
         super(context, attrs);
         setLayerType(View.LAYER_TYPE_SOFTWARE, null);
         mBitPaint = new Paint();
-        BmpDST = BitmapFactory.decodeResource(getResources(), R.mipmap.dog_invert_shade,null);
-        BmpSRC = BitmapFactory.decodeResource(getResources(),R.mipmap.dog1,null);
+        BmpDST = BitmapFactory.decodeResource(getResources(), R.drawable.dog_invert_shade,null);
+        BmpSRC = BitmapFactory.decodeResource(getResources(),R.drawable.dog1,null);
 
         Matrix matrix = new Matrix();
         matrix.setScale(1F, -1F);

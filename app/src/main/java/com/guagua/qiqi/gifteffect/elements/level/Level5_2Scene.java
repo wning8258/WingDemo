@@ -81,7 +81,7 @@ public class Level5_2Scene extends IScene implements BitmapOnDrawListener {
 		Bitmap bitmap;
 		BitmapShape bitmapShape=null;
 		
-		bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.mipmap.level_5_bg);
+		bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.level_5_bg);
 		if (bitmap != null) {
 			//修改默认的北京基准点，默认居中
 			final int bgWidth = bitmap.getWidth();
@@ -103,7 +103,7 @@ public class Level5_2Scene extends IScene implements BitmapOnDrawListener {
 			ElfFactory.endowBackgroup(bg, 1f, infoPanelRect.left, infoPanelRect.top);
 			
 			//初始化背景里渐变的
-			bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_5_bg_front);
+			bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.level_5_bg_front);
 			if (bitmap != null) {
 				bitmapShape = new BitmapShape(bitmap, this);
 				ElfFactory.endowBackgroupBack(bitmapShape, (assembleBitmapWidth - bitmap.getWidth()) / 2,
@@ -124,7 +124,7 @@ public class Level5_2Scene extends IScene implements BitmapOnDrawListener {
 			infoPanel.addInnerElement(circleShape);
 		}
 //
-		bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_5_star);
+		bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.level_5_star);
 		if (bitmap != null) {
 			Rect star = BitmapUtils.correctBitmapRect(bitmap, measureRect, 0.8f);
 			for (int i = 0; i < 6; i++) {
@@ -133,7 +133,7 @@ public class Level5_2Scene extends IScene implements BitmapOnDrawListener {
 				infoPanel.addInnerElement(bitmapShape);
 			}
 		}
-		bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_5_yellow_line);
+		bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.level_5_yellow_line);
 		if (bitmap != null) {
 			bitmapShape = new BitmapShape(bitmap, this);
 			ElfFactory.endowLevelCommonLine(bitmapShape, measureRect.left, measureRect.top - PXUtils.dp2px(mContext, 6), measureRect);
@@ -143,10 +143,10 @@ public class Level5_2Scene extends IScene implements BitmapOnDrawListener {
 //		//初始化灯光，因为三个中心点一样，所以看成一个整体
 //		//这里需要调整left和right的位置。
 //
-		Bitmap light = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_5_light);
-		Bitmap lightBottom = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_5_light_bottom);
-		Bitmap star = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_5_star);
-		Bitmap starYellow = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_5_yellow_start);
+		Bitmap light = BitmapUtils.decodeBitmap(mContext, R.drawable.level_5_light);
+		Bitmap lightBottom = BitmapUtils.decodeBitmap(mContext, R.drawable.level_5_light_bottom);
+		Bitmap star = BitmapUtils.decodeBitmap(mContext, R.drawable.level_5_star);
+		Bitmap starYellow = BitmapUtils.decodeBitmap(mContext, R.drawable.level_5_yellow_start);
 		if (light != null && lightBottom != null && star != null) {
 			for (int i = 0; i < 9; i++) {
 				BitmapShape lightShape = new BitmapShape(light, this) {
@@ -166,7 +166,7 @@ public class Level5_2Scene extends IScene implements BitmapOnDrawListener {
 				infoPanel.addInnerElement(star2Shape);
 			}
 		}
-		bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.mipmap.level_5_s);
+		bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.level_5_s);
 		if (bitmap != null) {
 			for (int i = 0; i < 5; i++) {
 				bitmapShape = new BitmapShape(bitmap, this);

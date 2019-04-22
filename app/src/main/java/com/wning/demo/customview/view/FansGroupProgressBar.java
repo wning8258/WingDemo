@@ -60,7 +60,7 @@ public class FansGroupProgressBar extends View{
         paint_progress.set(paint);
         paint_progress.setColor(getResources().getColor(R.color.qiqi_personal_fansgroup_pb_arc));
 
-        bitmap= BitmapFactory.decodeResource(getResources(), R.mipmap.qiqi_personal_fansgroup_pb_progress);
+        bitmap= BitmapFactory.decodeResource(getResources(), R.drawable.qiqi_personal_fansgroup_pb_progress);
 
     }
 

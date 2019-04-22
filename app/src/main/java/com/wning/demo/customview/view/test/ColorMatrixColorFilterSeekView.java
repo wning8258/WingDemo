@@ -43,7 +43,7 @@ public class ColorMatrixColorFilterSeekView extends LinearLayout {
 
     private void init() {
 
-        mOriginBmp = BitmapFactory.decodeResource(getResources(), R.mipmap.dog);
+        mOriginBmp = BitmapFactory.decodeResource(getResources(), R.drawable.dog);
         mTempBmp = Bitmap.createBitmap(mOriginBmp.getWidth(), mOriginBmp.getHeight(),
                 Bitmap.Config.ARGB_8888);
 

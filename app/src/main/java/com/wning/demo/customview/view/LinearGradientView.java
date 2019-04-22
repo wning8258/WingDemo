@@ -51,7 +51,7 @@ public class LinearGradientView extends View {
         super.onDraw(canvas);
         layerId=canvas.saveLayer(0,0,getWidth(),getHeight(),null,Canvas.ALL_SAVE_FLAG);
 
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.ufo_background);
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.ufo_background);
         canvas.drawBitmap(bitmap,0,0,null);
 
         linearGradient = new LinearGradient(0, 0.0f, getWidth(),0, new int[]{Color.BLACK,0}, null, Shader.TileMode.CLAMP);

@@ -47,7 +47,7 @@ public class Level7Scene extends IScene implements BitmapOnDrawListener {
 	}
 
 	private void initData() {
-		Bitmap bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.mipmap.level_7_bg);
+		Bitmap bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.level_7_bg);
 		BitmapShape bitmapShape;
 		if (bitmap != null) {
 			//修改默认的北京基准点，默认居中
@@ -61,7 +61,7 @@ public class Level7Scene extends IScene implements BitmapOnDrawListener {
 			ElfFactory.endowBackgroup(bg, 1f, (mWidth - bitmap.getWidth()) / 2, (mHeight - bitmap.getHeight()) / 2);
 			bg.setEnableMatrix(true);
 			
-			bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_7_bg_front);
+			bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.level_7_bg_front);
 			if (bitmap != null) {
 				bitmapShape = new BitmapShape(bitmap, this);
 				ElfFactory.endowBackgroupBack(bitmapShape, (mWidth - bitmap.getWidth()) / 2, (mHeight - bitmap.getHeight()) / 2, 0f,.1f );
@@ -69,14 +69,14 @@ public class Level7Scene extends IScene implements BitmapOnDrawListener {
 			}
 			
 			//初始化背景里渐变的
-			bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_7_bg_bg);
+			bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.level_7_bg_bg);
 			if (bitmap != null) {
 				bitmapShape = new BitmapShape(bitmap, this);
 
 				ElfFactory.endowBackgroupBack2(bitmapShape, (mWidth - bitmap.getWidth()) / 2, (mHeight - bitmap.getHeight()) / 2, 0f, 0.2f, 0.8f, 1);
 				addShape(bitmapShape);
 			}
-			bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_7_money_bi);
+			bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.level_7_money_bi);
 			if (bitmap != null) {
 				for (int i = 0; i < 15; i++) {
 					bitmapShape = new BitmapShape(bitmap, this);
@@ -95,14 +95,14 @@ public class Level7Scene extends IScene implements BitmapOnDrawListener {
 		}
 
 		//初始化钱袋
-		bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.mipmap.level_7_money);
+		bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.level_7_money);
 		if (bitmap != null) {
 			bitmapShape = new BitmapShape(bitmap, this);
 			ElfFactory.endowLevel7MoneyDai(bitmapShape, rect);
 			addShape(bitmapShape);
 		}
 		//初始化钱币
-		bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.mipmap.level_7_money_bi);
+		bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.level_7_money_bi);
 		if (bitmap != null) {
 			for (int i = 0; i < 10; i++) {
 				bitmapShape = new BitmapShape(bitmap, this);
@@ -111,7 +111,7 @@ public class Level7Scene extends IScene implements BitmapOnDrawListener {
 			}
 		}
 		//初始化背景星星
-		bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.mipmap.level_6_star);
+		bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.level_6_star);
 		if (bitmap != null) {
 			Rect rectStar = new Rect(rect);
 			rectStar.top = rectStar.top - bitmap.getHeight() / 2;
@@ -124,7 +124,7 @@ public class Level7Scene extends IScene implements BitmapOnDrawListener {
 				addShape(bitmapShape);
 			}
 		}
-		bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_7_yellow_circle);
+		bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.level_7_yellow_circle);
 		final Rect real=BitmapUtils.correctBitmapRect(bitmap, rect, 0.8f);
 		real.bottom=real.top+PXUtils.dp2px(mContext, 10);
 		for (int i = 0; i < 40; i++) {
@@ -139,7 +139,7 @@ public class Level7Scene extends IScene implements BitmapOnDrawListener {
 		}
 		
 		//初始化星星级别.
-		bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.mipmap.level_7_s);
+		bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.level_7_s);
 		if (bitmap != null) {
 			for (int i = 0; i < 7; i++) {
 				bitmapShape = new BitmapShape(bitmap, this);

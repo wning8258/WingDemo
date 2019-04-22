@@ -74,13 +74,13 @@ public class VideoAnimatorLoadingView  extends RelativeLayout{
         mAnimationDrawable = new AnimationDrawable();
         try {
             mIsLoadingSuccess=true;
-            mAnimationDrawable.addFrame(getResources().getDrawable(R.mipmap.qiqi_room_video_loading_bear6), mFrameAnimationDuration);
-            mAnimationDrawable.addFrame(getResources().getDrawable(R.mipmap.qiqi_room_video_loading_bear0), mFrameAnimationDuration);
-            mAnimationDrawable.addFrame(getResources().getDrawable(R.mipmap.qiqi_room_video_loading_bear1), mFrameAnimationDuration);
-            mAnimationDrawable.addFrame(getResources().getDrawable(R.mipmap.qiqi_room_video_loading_bear2), mFrameAnimationDuration);
-            mAnimationDrawable.addFrame(getResources().getDrawable(R.mipmap.qiqi_room_video_loading_bear3), mFrameAnimationDuration);
-            mAnimationDrawable.addFrame(getResources().getDrawable(R.mipmap.qiqi_room_video_loading_bear4), mFrameAnimationDuration);
-            mAnimationDrawable.addFrame(getResources().getDrawable(R.mipmap.qiqi_room_video_loading_bear5), mFrameAnimationDuration);
+            mAnimationDrawable.addFrame(getResources().getDrawable(R.drawable.qiqi_room_video_loading_bear6), mFrameAnimationDuration);
+            mAnimationDrawable.addFrame(getResources().getDrawable(R.drawable.qiqi_room_video_loading_bear0), mFrameAnimationDuration);
+            mAnimationDrawable.addFrame(getResources().getDrawable(R.drawable.qiqi_room_video_loading_bear1), mFrameAnimationDuration);
+            mAnimationDrawable.addFrame(getResources().getDrawable(R.drawable.qiqi_room_video_loading_bear2), mFrameAnimationDuration);
+            mAnimationDrawable.addFrame(getResources().getDrawable(R.drawable.qiqi_room_video_loading_bear3), mFrameAnimationDuration);
+            mAnimationDrawable.addFrame(getResources().getDrawable(R.drawable.qiqi_room_video_loading_bear4), mFrameAnimationDuration);
+            mAnimationDrawable.addFrame(getResources().getDrawable(R.drawable.qiqi_room_video_loading_bear5), mFrameAnimationDuration);
         } catch (Exception e) {
             LogUtils.i(TAG,"videoloadingview exception :"+e.getMessage());
             mIsLoadingSuccess=false;
@@ -91,7 +91,7 @@ public class VideoAnimatorLoadingView  extends RelativeLayout{
         }
         if(!mIsLoadingSuccess) {
             mAnimationDrawable=null;
-            mLoadingBear.setImageResource(R.mipmap.qiqi_room_video_loading_bear6);
+            mLoadingBear.setImageResource(R.drawable.qiqi_room_video_loading_bear6);
             return;
         }
 
@@ -215,7 +215,7 @@ public class VideoAnimatorLoadingView  extends RelativeLayout{
         if(mIsLoadingSuccess) {
             if (mAnimationDrawable != null && mAnimationDrawable.isRunning()) {
                 mAnimationDrawable.stop();
-                mLoadingBear.setImageResource(R.mipmap.qiqi_room_video_loading_bear6);
+                mLoadingBear.setImageResource(R.drawable.qiqi_room_video_loading_bear6);
                 mAnimationDrawable = null;
             }
             if (mDotAnimator != null && mDotAnimator.isRunning()) {
@@ -231,7 +231,7 @@ public class VideoAnimatorLoadingView  extends RelativeLayout{
                 mShadowAnimator = null;
             }
         }else{
-            mLoadingBear.setImageResource(R.mipmap.qiqi_room_video_loading_bear6);
+            mLoadingBear.setImageResource(R.drawable.qiqi_room_video_loading_bear6);
         }
         mIsStarted=false;
     }

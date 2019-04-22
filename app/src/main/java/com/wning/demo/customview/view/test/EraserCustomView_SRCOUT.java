@@ -32,7 +32,7 @@ public class EraserCustomView_SRCOUT extends BaseCustomView {
         mBitPaint.setStyle(Paint.Style.STROKE);
         mBitPaint.setStrokeWidth(45);
 
-        BmpSRC = BitmapFactory.decodeResource(getResources(), R.mipmap.dog1,null);
+        BmpSRC = BitmapFactory.decodeResource(getResources(), R.drawable.dog1,null);
         BmpDST = Bitmap.createBitmap(BmpSRC.getWidth(), BmpSRC.getHeight(), Bitmap.Config.ARGB_8888);
         mPath = new Path();
     }

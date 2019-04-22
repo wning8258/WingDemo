@@ -69,7 +69,7 @@ public class Level10Scene extends IScene implements BitmapOnDrawListener {
 		Rect infoPanelRect = null;
 		Rect measureRect = null;
 		Path clipPath = null;
-		bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_6_bg);
+		bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.level_6_bg);
 		if (bitmap != null) {
 			//修改默认的北京基准点，默认居中
 			final int bgWidth = bitmap.getWidth();
@@ -87,14 +87,14 @@ public class Level10Scene extends IScene implements BitmapOnDrawListener {
 			//初始化背景数据
 			BitmapShape bg = new BitmapShape(bitmap, this);
 			ElfFactory.endowBackgroup(bg, 1f, infoPanelRect.left, infoPanelRect.top);
-			bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_6_bg_front);
+			bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.level_6_bg_front);
 			if (bitmap != null) {
 				bitmapShape = new BitmapShape(bitmap, this);
 				ElfFactory.endowBackgroupBack(bitmapShape, (assembleBitmapWidth - bitmap.getWidth()) / 2,
 						(assembleBitmapHeight - bitmap.getHeight()) / 2, 0f, .1f);
 				infoPanel.addInnerElement(bitmapShape);
 			}
-			bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_6_rose);
+			bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.level_6_rose);
 			if (bitmap != null) {
 				initRose(bitmap, measureRect, infoPanel);
 			}
@@ -103,7 +103,7 @@ public class Level10Scene extends IScene implements BitmapOnDrawListener {
 		}
 
 		//初始化星星数据,位图本身有长度和高度,同时,图片draw是以做上角为基准点的.
-		bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_6_star);
+		bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.level_6_star);
 		if (bitmap != null) {
 			for (int i = 0; i < 5; i++) {
 				bitmapShape = new BitmapShape(bitmap, this);
@@ -119,7 +119,7 @@ public class Level10Scene extends IScene implements BitmapOnDrawListener {
 		}
 
 //		//初始化红心
-		bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_6_red_heart);
+		bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.level_6_red_heart);
 		if (bitmap != null) {
 			for (int i = 0; i < 10; i++) {
 				//因为对图片进行了缩放，所以如果以中心点为缩放点的话，会造成，范围误差
@@ -158,7 +158,7 @@ public class Level10Scene extends IScene implements BitmapOnDrawListener {
 			infoPanel.addInnerElement(b3);
 		}
 		//向上漂的白色物体
-		bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_6_snowflake);
+		bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.level_6_snowflake);
 		if (bitmap != null) {
 			for (int i = 0; i < 15; i++) {
 				bitmapShape = new BitmapShape(bitmap, this);
@@ -168,7 +168,7 @@ public class Level10Scene extends IScene implements BitmapOnDrawListener {
 		}
 //
 		//初始化星星级别. 
-		bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_6_s);
+		bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.level_6_s);
 		if (bitmap != null) {
 			for (int i = 0; i < 6; i++) {
 				bitmapShape = new BitmapShape(bitmap, this);

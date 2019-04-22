@@ -48,7 +48,7 @@ public class LevelOpenGuardScene extends IScene implements BitmapOnDrawListener 
 	}
 
 	private void initData() {
-		Bitmap bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.openguard_text_bg);
+		Bitmap bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.openguard_text_bg);
 		final int messageWidth = bitmap.getWidth();
 		final int messageHeight = bitmap.getHeight();
 		bitmap = BitmapUtils.decodeBitmap(mContext,
@@ -63,7 +63,7 @@ public class LevelOpenGuardScene extends IScene implements BitmapOnDrawListener 
 		ElfFactory.endowOpenGuardbg(boy, boyrect.left, boyrect.top, 3000, 7000);
 		addShape(boy);
 
-		bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.princess);
+		bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.princess);
 		final int princessWidth = bitmap.getWidth();
 		final int princessHeight = bitmap.getHeight();
 		Rect princessrect = new Rect((mWidth >> 1) + space, ((mWidth * 3 ) >> 2) - princessHeight - messageHeight * 2, (mWidth >> 1) + space + princessWidth, ((mWidth * 3 ) >> 2) - messageHeight * 2);
@@ -71,7 +71,7 @@ public class LevelOpenGuardScene extends IScene implements BitmapOnDrawListener 
 		ElfFactory.endowOpenGuardbg(princess, princessrect.left, princessrect.top, 3000, 7000);
 		addShape(princess);
 
-		bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.openguard_text_bg);
+		bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.openguard_text_bg);
 		Rect messagerect = new Rect((mWidth - messageWidth) >> 1, boyrect.bottom, (mWidth + messageWidth) >> 1, boyrect.bottom + messageHeight);
 		BitmapShape message = new BitmapShape(bitmap, this);
 		ElfFactory.endowOpenGuardbg(message, messagerect.left, messagerect.top, 3000, 7000);
@@ -84,7 +84,7 @@ public class LevelOpenGuardScene extends IScene implements BitmapOnDrawListener 
 		}
 
 		// 初始化红心
-		bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.gg_guard_red_heard);
+		bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.gg_guard_red_heard);
 		for (int i = 0; i < 2; i++) {
 			BitmapShape b1 = new BitmapShape(bitmap, this);
 			BitmapShape b2 = new BitmapShape(bitmap, this);

@@ -44,7 +44,7 @@ public class Level2Scene extends IScene implements BitmapOnDrawListener {
 	}
 
 	private void initData() {
-		Bitmap bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.mipmap.level_2_bg);
+		Bitmap bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.level_2_bg);
 		BitmapShape bitmapShape;
 		if (bitmap != null) {
 			//修改默认的北京基准点，默认居中
@@ -58,7 +58,7 @@ public class Level2Scene extends IScene implements BitmapOnDrawListener {
 			ElfFactory.endowBackgroup(bg, 1f, (mWidth - bitmap.getWidth()) / 2, (mHeight - bitmap.getHeight()) / 2);
 			bg.setEnableMatrix(true);
 			//初始化背景里渐变的
-			bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_2_bg_front);
+			bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.level_2_bg_front);
 			if (bitmap != null) {
 				bitmapShape = new BitmapShape(bitmap, this);
 				ElfFactory.endowBackgroupBack(bitmapShape, (mWidth - bitmap.getWidth()) / 2, (mHeight - bitmap.getHeight()) / 2, 0f,.1f );
@@ -69,7 +69,7 @@ public class Level2Scene extends IScene implements BitmapOnDrawListener {
 			initClipPathAndRect();
 		}
 		//初始化蝴蝶
-		bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_2_hudie);
+		bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.level_2_hudie);
 		if (bitmap != null) {
 			for (int i = 0; i < 5; i++) {
 				bitmapShape = new BitmapShape(bitmap, this);
@@ -78,14 +78,14 @@ public class Level2Scene extends IScene implements BitmapOnDrawListener {
 			}
 		}
 
-		bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_2_light_white_line);
+		bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.level_2_light_white_line);
 		if (bitmap != null) {
 			bitmapShape = new BitmapShape(bitmap, this);
 			ElfFactory.endowLevelCommonLine(bitmapShape, rect.left, rect.top - PXUtils.dp2px(mContext, 2), rect);
 			bitmapShape.setBitmapOnDrawListener(this);
 			addShape(bitmapShape);
 		}
-		bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_2_white_line);
+		bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.level_2_white_line);
 		if (bitmap != null) {
 			bitmapShape = new BitmapShape(bitmap, this);
 			ElfFactory.endowLevelCommonLine(bitmapShape, rect.left, rect.top - PXUtils.dp2px(mContext, 2), rect);
@@ -94,7 +94,7 @@ public class Level2Scene extends IScene implements BitmapOnDrawListener {
 		}
 
 		//横向跑动的一个纹理
-		bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_2_hudie);
+		bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.level_2_hudie);
 		if (bitmap != null) {
 			for (int i = 0; i < 4; i++) {
 				bitmapShape = new BitmapShape(bitmap, this);
@@ -104,7 +104,7 @@ public class Level2Scene extends IScene implements BitmapOnDrawListener {
 			}
 		}
 		//横向跑动的一个纹理
-		bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_2_hudie);
+		bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.level_2_hudie);
 		if (bitmap != null) {
 			for (int i = 0; i < 5; i++) {
 				bitmapShape = new BitmapShape(bitmap, this);
@@ -114,7 +114,7 @@ public class Level2Scene extends IScene implements BitmapOnDrawListener {
 			}
 		}
 		//初始化星星
-		bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.mipmap.level_3_s);
+		bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.level_3_s);
 		if (bitmap != null) {
 			for (int i = 0; i < 2; i++) {
 				bitmapShape = new BitmapShape(bitmap, this);

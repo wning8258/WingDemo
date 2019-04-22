@@ -26,7 +26,7 @@ public class PorterDuffColorFilterCustomView extends BaseCustomView {
     public PorterDuffColorFilterCustomView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         mPaint = new Paint();
-        mBmp = BitmapFactory.decodeResource(getResources(), R.mipmap.dog);
+        mBmp = BitmapFactory.decodeResource(getResources(), R.drawable.dog);
     }
 
 

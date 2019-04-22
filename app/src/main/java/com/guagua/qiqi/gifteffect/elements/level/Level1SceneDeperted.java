@@ -41,7 +41,7 @@ public class Level1SceneDeperted extends IScene implements BitmapOnDrawListener 
 	}
 
 	private void initData() {
-		Bitmap bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.mipmap.level_1_bg);
+		Bitmap bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.level_1_bg);
 		BitmapShape bitmapShape;
 		if (bitmap != null) {
 			//修改默认的北京基准点，默认居中
@@ -55,7 +55,7 @@ public class Level1SceneDeperted extends IScene implements BitmapOnDrawListener 
 			ElfFactory.endowBackgroup(bg, 1f, (mWidth - bitmap.getWidth()) / 2, (mHeight - bitmap.getHeight()) / 2);
 			bg.setEnableMatrix(true);
 			//初始化背景后面的心跳动画
-			bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_1_bg_front);
+			bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.level_1_bg_front);
 			if (bitmap != null) {
 				bitmapShape = new BitmapShape(bitmap, this);
 
@@ -66,7 +66,7 @@ public class Level1SceneDeperted extends IScene implements BitmapOnDrawListener 
 			//初始化 剪裁区
 			initClipPathAndRect();
 			//初始化背景前面的一个alpha渐变
-			bitmap = BitmapUtils.decodeBitmap(mContext, R.mipmap.level_1_bg_alpha);
+			bitmap = BitmapUtils.decodeBitmap(mContext, R.drawable.level_1_bg_alpha);
 			if (bitmap != null) {
 				bitmapShape = new BitmapShape(bitmap, this);
 				ElfFactory.endowBackgroupAlpha(bitmapShape, (mWidth - bitmap.getWidth()) / 2, (mHeight - bitmap.getHeight()) / 2);
@@ -75,7 +75,7 @@ public class Level1SceneDeperted extends IScene implements BitmapOnDrawListener 
 		}
 
 		//初始化跑动的黄线.
-		bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.mipmap.level_1_yellow_line);
+		bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.level_1_yellow_line);
 		if (bitmap != null) {
 			bitmapShape = new BitmapShape(bitmap, this);
 			ElfFactory.endowLevel1YellowLine(bitmapShape, rect.left + PXUtils.dp2px(mContext, 5), rect.top, rect);
@@ -84,7 +84,7 @@ public class Level1SceneDeperted extends IScene implements BitmapOnDrawListener 
 		}
 
 		//初始化星星个数,星星不在剪裁范围里,所以不要设置setBitmapOnDrawListener
-		bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.mipmap.level_3_s);
+		bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.level_3_s);
 		if (bitmap != null) {
 			for (int i = 0; i < 1; i++) {
 				bitmapShape = new BitmapShape(bitmap, this);
