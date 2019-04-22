@@ -39,10 +39,11 @@ import com.wning.demo.rxjava.RxJava2Activity;
 
 import java.util.ArrayList;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 @Wing
-public class MainActivity extends BaseActivity {
+public class MainActivity extends AppCompatActivity {
 
 
 //    @BindView(R.id.recyclerView)
@@ -59,15 +60,11 @@ public class MainActivity extends BaseActivity {
 
     Toolbar toolbar;
 
-    @Override
-    protected int getLayoutId() {
-        return R.layout.activity_main;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       // setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main);
 
         listView=findViewById(R.id.list);
         toolbar=findViewById(R.id.toolbar);

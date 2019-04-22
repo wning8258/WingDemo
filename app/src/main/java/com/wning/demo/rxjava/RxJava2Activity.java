@@ -13,7 +13,6 @@ import android.widget.TextView;
 
 import com.guagua.modules.utils.LogUtils;
 import com.wning.demo.R;
-import com.wning.demo.logprint.LogPrinter;
 
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
@@ -125,7 +124,6 @@ public class RxJava2Activity extends AppCompatActivity  {
             holder.btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    LogPrinter.clear();
                     switch (position){
                         case 0:  //create
 

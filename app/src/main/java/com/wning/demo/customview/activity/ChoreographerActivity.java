@@ -4,9 +4,9 @@ import android.os.Bundle;
 import android.os.SystemClock;
 import android.view.Choreographer;
 
+import com.guagua.modules.utils.LogUtils;
 import com.wning.demo.BaseActivity;
 import com.wning.demo.R;
-import com.wning.demo.logprint.LogPrinter;
 
 public class ChoreographerActivity extends BaseActivity {
 
@@ -40,10 +40,6 @@ public class ChoreographerActivity extends BaseActivity {
 
     }
 
-    @Override
-    protected boolean isNeedLogPrinter() {
-        return true;
-    }
 
 
     private class ChoreographerFrameCallback implements Choreographer.FrameCallback{
@@ -52,7 +48,7 @@ public class ChoreographerActivity extends BaseActivity {
             long currentTime = SystemClock.uptimeMillis();
 
 
-            LogPrinter.log("frameTimeNanos :"+frameTimeNanos/1000000+",currentTime :"+currentTime);
+            LogUtils.i(TAG,"frameTimeNanos :"+frameTimeNanos/1000000+",currentTime :"+currentTime);
 
             Choreographer.getInstance().postFrameCallback(this);
         }

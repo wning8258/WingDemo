@@ -31,11 +31,6 @@ public class AnimLoadingDialog extends Dialog {
     /**
      * 设置dialog背景是不是变灰。默认是不变灰的
      * @method: setDimBehindEnabled
-     * @description: TODO
-     * @author: DongFuhai
-     * @param enable
-     * @return: void
-     * @date: 2013-9-18 下午4:09:11
      */
     public AnimLoadingDialog setDimBehindEnabled(boolean dimBehindEnabled) {
         this.dimBehindEnabled = dimBehindEnabled;

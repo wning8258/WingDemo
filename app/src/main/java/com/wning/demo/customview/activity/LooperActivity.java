@@ -7,9 +7,9 @@ import android.os.Message;
 import android.view.View;
 import android.widget.Button;
 
+import com.guagua.modules.utils.LogUtils;
 import com.wning.demo.BaseActivity;
 import com.wning.demo.R;
-import com.wning.demo.logprint.LogPrinter;
 
 public class LooperActivity extends BaseActivity implements View.OnClickListener {
 
@@ -31,12 +31,11 @@ public class LooperActivity extends BaseActivity implements View.OnClickListener
         test=findViewById(R.id.test);
         test.setOnClickListener(this);
 
-        LogPrinter.enable(this);
 
         mMainHandler =new Handler(){
             @Override
             public void handleMessage(Message msg) {
-                LogPrinter.log("Main Thread Got an incoming message from the child thread - "
+                LogUtils.i(TAG,"Main Thread Got an incoming message from the child thread - "
                         + (String) msg. obj);
             }
         };
@@ -48,7 +47,6 @@ public class LooperActivity extends BaseActivity implements View.OnClickListener
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        LogPrinter.disable();
         mChildHandler.getLooper().quit();
     }
 
@@ -62,7 +60,7 @@ public class LooperActivity extends BaseActivity implements View.OnClickListener
                 childMsg. obj = mMainHandler.getLooper().getThread().getName() + " says Hello";
                 mChildHandler.sendMessage(childMsg);
 
-                LogPrinter. log("Main Thead Send a message to the child thread - " + (String)childMsg. obj);
+                LogUtils.i(TAG,"Main Thead Send a message to the child thread - " + (String)childMsg. obj);
                 break;
         }
     }
@@ -76,10 +74,10 @@ public class LooperActivity extends BaseActivity implements View.OnClickListener
             mChildHandler=new Handler(){
                 @Override
                 public void handleMessage(Message msg) {
-                    LogPrinter.log("Child Thread Got an incoming message from the main thread - " + (String)msg.obj);
+                    LogUtils.i(TAG,"Child Thread Got an incoming message from the main thread - " + (String)msg.obj);
 
 
-                    LogPrinter.log("Child Thread do something......................");
+                    LogUtils.i(TAG,"Child Thread do something......................");
 
                     try {
 
@@ -93,7 +91,7 @@ public class LooperActivity extends BaseActivity implements View.OnClickListener
 
                         mMainHandler.sendMessage(toMain);
 
-                        LogPrinter.log("Child Thread Send a message to the main thread - " + (String)toMain.obj);
+                        LogUtils.i(TAG,"Child Thread Send a message to the main thread - " + (String)toMain.obj);
 
                     } catch (InterruptedException e) {
                         e.printStackTrace();

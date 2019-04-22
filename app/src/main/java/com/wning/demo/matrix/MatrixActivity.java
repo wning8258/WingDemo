@@ -1,7 +1,6 @@
 package com.wning.demo.matrix;
 
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
@@ -10,9 +9,10 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.guagua.modules.utils.LogUtils;
+import com.wning.demo.BaseActivity;
 import com.wning.demo.R;
 
-public class MatrixActivity extends AppCompatActivity implements View.OnClickListener {
+public class MatrixActivity extends BaseActivity implements View.OnClickListener {
 
     private ImageView iv;
     private Button btn;
@@ -20,13 +20,17 @@ public class MatrixActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_matrix);
 
         iv= (ImageView) findViewById(R.id.iv);
         btn= (Button) findViewById(R.id.btn);
 
         iv.setOnClickListener(this);
         btn.setOnClickListener(this);
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_matrix;
     }
 
     @Override
@@ -43,7 +47,7 @@ public class MatrixActivity extends AppCompatActivity implements View.OnClickLis
 //                iv.setImageMatrix(imageMatrix);
                 int loc[]=new int[2];
                 iv.getLocationOnScreen(loc);
-                LogUtils.i("wn","location : "+loc[0]+" , "+loc[1]);   //还是移动之前的坐标
+                LogUtils.i(TAG,"location : "+loc[0]+" , "+loc[1]);   //还是移动之前的坐标
                 Animation animation=new Animation() {
 
                     @Override
