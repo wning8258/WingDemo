@@ -10,7 +10,7 @@ ext {
     googlesupportVersion= '1.0.0-beta01'
 
     goodleDependencies = [
-            appcompat_v7: "androidx.appcompat:appcompat:${googlesupportVersion}",
+            appcompat_v7: "androidx.appcompat:appcompat:1.1.0-alpha01",
             design : "com.google.android.material:material:${googlesupportVersion}",
             support_v4 : "androidx.legacy:legacy-support-v4:${googlesupportVersion}",
             recyclerview_v7: "androidx.recyclerview:recyclerview:${googlesupportVersion}",

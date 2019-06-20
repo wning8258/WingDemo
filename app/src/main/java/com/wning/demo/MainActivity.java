@@ -11,16 +11,11 @@ import android.widget.TextView;
 
 import com.example.Wing;
 import com.guagua.modules.utils.Utils;
-import com.wning.demo.architecture.DataBindingActivity;
-import com.wning.demo.arouter.ARouterEntranceActivity;
 import com.wning.demo.customview.activity.ChoreographerActivity;
 import com.wning.demo.customview.activity.CoordinatorLayoutActivity;
 import com.wning.demo.customview.activity.InterceptTouchEventActivity;
 import com.wning.demo.customview.activity.LooperActivity;
 import com.wning.demo.matrix.MatrixActivity;
-import com.wning.demo.mvp.UserInfoActivity;
-import com.wning.demo.producer.ProducerActivity;
-import com.wning.demo.rxjava.RxJava2Activity;
 
 import java.util.ArrayList;
 
@@ -80,15 +75,6 @@ public class MainActivity extends AppCompatActivity {
 
         dataItems.add(new DataList().setTitle("动画").setList(items));
 
-
-        items=new ArrayList<>();
-        items.add(new DataItem().setTitle("RxJava2").setClazz(RxJava2Activity.class));
-        items.add(new DataItem().setTitle("MVP").setClazz(UserInfoActivity.class));
-        items.add(new DataItem().setTitle("Fresco Producer&Consumer").setClazz(ProducerActivity.class));
-        items.add(new DataItem().setTitle("Arouter").setClazz(ARouterEntranceActivity.class));
-        items.add(new DataItem().setTitle("DataBinding").setClazz(DataBindingActivity.class));
-
-        dataItems.add(new DataList().setTitle("架构").setList(items));
     }
 
     private void initRecyclerView() {
