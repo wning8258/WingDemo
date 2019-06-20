@@ -10,20 +10,6 @@
         android:orientation="vertical"
         android:showDividers="middle">
         
-        <com.wning.demo.customview.view.LinearGradientView android:layout_width="match_parent"
-                                                           android:layout_height="100dp"/>
-
-        <LinearLayout android:layout_width="match_parent" android:layout_height="200dp">
-
-        <com.wning.demo.customview.view.TouchMoveView android:layout_width="40dp"
-                                                      android:layout_height="40dp"
-        android:background="@android:color/holo_red_light"/>
-
-        </LinearLayout>
-
-        <!--<com.wning.demo.customview.view.test.MATRIX_SAVE_FLAG_View-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="100dp"/>-->
 
 
         <com.wning.demo.customview.view.test.TextWave_DSTIN android:layout_width="match_parent"
@@ -36,8 +22,6 @@
                                                              android:layout_height="450dp"/>
 
 
-        <!--<com.wning.demo.customview.view.test.AvoidXfermodeView android:layout_width="match_parent"-->
-                                                               <!--android:layout_height="200dp"/>-->
 
 
         <com.wning.demo.customview.view.test.PorterDuffColorFilterCustomView

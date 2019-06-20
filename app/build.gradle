@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion rootProject.ext.android.AndroidCompileSdkVersion
@@ -56,7 +58,7 @@ dependencies {
     implementation googleDependencies.appcompat_v7
     implementation googleDependencies.design
 
-    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.4-beta2'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.0-alpha-2'
     implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
 
     implementation otherDependdencies.nineoldandroids //动画兼容2.3
@@ -102,7 +104,12 @@ dependencies {
     //  annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version" // use kapt for Kotlin
     // alternately - if using Java8, use the following instead of lifecycle-compiler
     implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+    implementation "androidx.core:core-ktx:+"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.0.0"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
 
-
+}
+repositories {
+    mavenCentral()
 }

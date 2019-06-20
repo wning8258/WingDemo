@@ -33,7 +33,6 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.FormBody;
 import okhttp3.Headers;
-import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -81,7 +80,7 @@ public class OkHttpActivity extends BaseActivity implements View.OnClickListener
 //        mClient= new OkHttpClient.Builder()
 //                .build();
         mClient = genericClient();
-        makeHeader();
+//        makeHeader();
         String url = "http://hall.m.qxiu.com/system/gamelist.do?sign=A27C690D44185D92AE125AC428C35F1CE82180BD&roomid=223981&accesstoken=CBE9458707D491548BFA1E8FA4343ED3&id=107&openid=5FF7711FA6FCAB6E3A4044C04DB7CB6F";
         HashMap params = new HashMap();
         finalUrl = makeFinalUrl(url, params);
@@ -96,22 +95,22 @@ public class OkHttpActivity extends BaseActivity implements View.OnClickListener
         OkHttpClient client1=new OkHttpClient();
 
 
-        OkHttpClient httpClient = new OkHttpClient.Builder()
-                //.cache()
-                .addInterceptor(new Interceptor() {
-                    @Override
-                    public okhttp3.Response intercept(Chain chain) throws IOException {
-                        Request.Builder builder = chain.request().newBuilder();
-//                        for (Map.Entry<String, String> entry : QiQiHttpConfig.getHeader().entrySet()) {
-//                            builder.addHeader(entry.getKey(), entry.getValue());
-//                        }
-                        Request request = builder.headers(Headers.of(QiQiHttpConfig.getHeader())).build();
-                        return chain.proceed(request);
-                    }
-                })
-                .build();
+//        OkHttpClient httpClient = new OkHttpClient.Builder()
+//                //.cache()
+//                .addInterceptor(new Interceptor() {
+//                    @Override
+//                    public okhttp3.Response intercept(Chain chain) throws IOException {
+//                        Request.Builder builder = chain.request().newBuilder();
+////                        for (Map.Entry<String, String> entry : QiQiHttpConfig.getHeader().entrySet()) {
+////                            builder.addHeader(entry.getKey(), entry.getValue());
+////                        }
+//                        Request request = builder.headers(Headers.of(QiQiHttpConfig.getHeader())).build();
+//                        return chain.proceed(request);
+//                    }
+//                })
+//                .build();
 
-        return httpClient;
+        return client1;
     }
 
     @Override

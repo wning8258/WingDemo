@@ -15,7 +15,6 @@ import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
-import com.squareup.leakcanary.LeakCanary;
 import com.wning.demo.net.volley.data.RequestManager;
 
 import java.util.HashMap;
@@ -54,7 +53,6 @@ public class MyApplication  extends Application{
     public void onCreate() {
         super.onCreate();
         mInstance=this;
-        LeakCanary.install(this);
         initImageLoader();
 
         if (LogUtils.ISDEBUG) {           // 这两行必须写在init之前，否则这些配置在init过程中将无效

@@ -7,4 +7,6 @@
     <string name="image_loading_btn_request">Image loading</string>
     <string name="title_activity_coordinator_layout">CoordinatorLayoutActivity</string>
     <string name="title_activity_intercept_touch_event">InterceptTouchEventActivity</string>
+    <string name="drawer_open">打开</string>
+    <string name="drawer_close">关闭</string>
 </resources>
