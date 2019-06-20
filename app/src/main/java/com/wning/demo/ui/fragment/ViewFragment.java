@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 
 import com.google.android.material.tabs.TabLayout;
 import com.wning.demo.R;
-import com.wning.demo.widget.DrawerLayoutInterceptViewPager;
+import com.wning.demo.widget.NoScrollViewPager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +21,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 public class ViewFragment extends Fragment {
 
     private TabLayout mTabLayout;
-    private DrawerLayoutInterceptViewPager mViewPager;
+    private NoScrollViewPager mViewPager;
 
     private String[] titles={"Xfermode","Bezier","ViewDragHelper","CustomView"};
     private List<Fragment> fragmentList=new ArrayList<>();
@@ -35,6 +35,7 @@ public class ViewFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         mViewPager=view.findViewById(R.id.viewpager);
+        mViewPager.setCanScroll(false);
         mTabLayout=view.findViewById(R.id.tablayout);
         mTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
         mTabLayout.setupWithViewPager(mViewPager);
