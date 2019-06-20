@@ -26,12 +26,6 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".customview.activity.XfermodeRoundImageViewActivity">
-        </activity>
-        <activity android:name=".customview.activity.XfermodeActivity"/>
-        <activity android:name=".customview.activity.ShaderRoundImageViewActivity">
-        </activity>
-        <activity android:name=".gifteffect.QIQIGiftEffectActivity"/>
         <activity android:name="com.guagua.anim.RepeatGiftActivity"/>
         <activity android:name="com.guagua.anim.QuotaGiftActivity"/>
         <activity android:name="com.guagua.anim.SingleGiftActivity"/>
@@ -42,14 +36,7 @@
             android:name="com.guagua.anim.GiftEffectActivity"/> <!-- <activity android:name=".rxjava.RxJavaActivity"/> -->
         <activity android:name=".rxjava.RxJava2Activity"/>
         <activity android:name=".mvp.UserInfoActivity"/>
-        <activity android:name=".dagger2.Dagger2Activity"/>
 
-        <activity android:name=".customview.activity.bezier.BezierActivity1">
-        </activity>
-        <activity android:name=".customview.activity.bezier.BezierActivity2">
-        </activity>
-        <activity android:name=".customview.activity.bezier.BezierWaveActivity">
-        </activity>
         <activity android:name=".matrix.MatrixActivity">
         </activity>
         <activity android:name=".customview.activity.LooperActivity"/>
@@ -75,11 +62,6 @@
         </activity>
         <activity
             android:name=".customview.activity.InterceptTouchEventActivity"
-            android:label="@string/title_activity_intercept_touch_event"
-            android:theme="@style/AppTheme">
-        </activity>
-        <activity
-            android:name=".customview.activity.ViewDragHelperActivity"
             android:label="@string/title_activity_intercept_touch_event"
             android:theme="@style/AppTheme">
         </activity>

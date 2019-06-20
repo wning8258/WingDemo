@@ -20,33 +20,18 @@ import com.wning.demo.net.volley.data.RequestManager;
 import java.util.HashMap;
 import java.util.Map;
 
-//import com.wning.demo.base.AppComponent;
-//import com.wning.demo.base.AppModule;
-
 /**
  * Created by Administrator on 2015/12/30.
  */
 @Wing
 public class MyApplication  extends Application{
-
     //图片最大缓存大小15MB
     private static final int MAX_DISK_CACHE_SIZE = 15 * 1024 * 1024;
     private DisplayImageOptions defaultDisplayImageOptions;
-
     private static MyApplication mInstance;
-   // private static AppComponent appComponent;
-
     public static MyApplication getInstance() {
         return mInstance;
     }
-
-//    public static AppComponent getAppComponent(){
-//        if(appComponent==null){
-//            appComponent= DaggerAppComponent.builder().appModule(new AppModule(mInstance)).build();
-//        }
-//        return appComponent;
-//    }
-
     public Map<Integer,String> map=new HashMap();
 
     @Override
@@ -60,28 +45,20 @@ public class MyApplication  extends Application{
             ARouter.openDebug();   // 开启调试模式(如果在InstantRun模式下运行，必须开启调试模式！线上版本需要关闭,否则有安全风险)
         }
         ARouter.init(this); // 尽可能早，推荐在Application中初始化
-
         RequestManager.init(this);
-
         Fresco.initialize(getApplicationContext());
-
-
 
 //        ImagePipelineConfig imagePipelineConfig=ImagePipelineConfig
 //                .newBuilder(getApplicationContext())
 //               // .setBitmapsConfig()
 //                //....
 //                .build();
-//
-//
 //       //一定要new一下factory,PipelineDraweeControllerBuilderSupplier初始化的时候使用到了ImagePipelineFactory对象
 //       // ImagePipelineFactory factory=new ImagePipelineFactory(imagePipelineConfig);
 //        //factory.getImagePipeline();
 //
 //        Fresco.initialize(getApplicationContext(),imagePipelineConfig);
     }
-
-
 
     private void initImageLoader() {
         int memoryCacheSize;

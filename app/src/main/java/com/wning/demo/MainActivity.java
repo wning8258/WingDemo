@@ -17,7 +17,6 @@ import com.wning.demo.customview.activity.ChoreographerActivity;
 import com.wning.demo.customview.activity.CoordinatorLayoutActivity;
 import com.wning.demo.customview.activity.InterceptTouchEventActivity;
 import com.wning.demo.customview.activity.LooperActivity;
-import com.wning.demo.dagger2.Dagger2Activity;
 import com.wning.demo.matrix.MatrixActivity;
 import com.wning.demo.mvp.UserInfoActivity;
 import com.wning.demo.producer.ProducerActivity;
@@ -83,10 +82,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         items=new ArrayList<>();
-       // items.add(new DataItem().setTitle("RxJava").setClazz(RxJavaActivity.class));
         items.add(new DataItem().setTitle("RxJava2").setClazz(RxJava2Activity.class));
         items.add(new DataItem().setTitle("MVP").setClazz(UserInfoActivity.class));
-        items.add(new DataItem().setTitle("Dagger2").setClazz(Dagger2Activity.class));
         items.add(new DataItem().setTitle("Fresco Producer&Consumer").setClazz(ProducerActivity.class));
         items.add(new DataItem().setTitle("Arouter").setClazz(ARouterEntranceActivity.class));
         items.add(new DataItem().setTitle("DataBinding").setClazz(DataBindingActivity.class));
