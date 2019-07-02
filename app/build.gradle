@@ -57,6 +57,7 @@ dependencies {
     implementation googleDependencies.support_v4
     implementation googleDependencies.appcompat_v7
     implementation googleDependencies.design
+    implementation googleDependencies.annotation
 
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.0-alpha-2'
     implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'

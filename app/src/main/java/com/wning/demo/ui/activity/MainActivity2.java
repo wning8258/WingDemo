@@ -12,8 +12,8 @@ import com.wning.demo.BaseActivity;
 import com.wning.demo.R;
 import com.wning.demo.ui.fragment.AnimFragment;
 import com.wning.demo.ui.fragment.ArchitectureFragment;
-import com.wning.demo.ui.fragment.ViewFragment;
 import com.wning.demo.ui.fragment.NetworkFragment;
+import com.wning.demo.ui.fragment.ViewFragment;
 
 import java.lang.reflect.Field;
 
@@ -40,7 +40,7 @@ public class MainActivity2 extends BaseActivity {
     private String TAG_ARCHITECTURE="architecture";
 
     @Override
-    protected int getLayoutId() {
+    protected  int getLayoutId() {
         return R.layout.activity_main2;
     }
 

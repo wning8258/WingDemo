@@ -15,6 +15,7 @@ ext {
             support_v4 : "androidx.legacy:legacy-support-v4:${googlesupportVersion}",
             recyclerview_v7: "androidx.recyclerview:recyclerview:${googlesupportVersion}",
             cardview_v7:"androidx.cardview:cardview:${googlesupportVersion}",
+            annotation:"androidx.annotation:annotation:${googlesupportVersion}",
             multidex:"androidx.multidex:multidex:2.0.0"
     ]
 
