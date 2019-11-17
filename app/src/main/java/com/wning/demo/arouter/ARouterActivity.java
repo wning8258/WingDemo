@@ -10,4 +10,6 @@ public class ARouterActivity extends BaseActivity{
     protected int getLayoutId() {
         return R.layout.activity_arouter;
     }
+
+    //testReset
 }
