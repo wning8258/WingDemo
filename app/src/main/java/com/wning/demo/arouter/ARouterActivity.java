@@ -11,5 +11,5 @@ public class ARouterActivity extends BaseActivity{
         return R.layout.activity_arouter;
     }
 
-    //testReset
+    //Arouter Master
 }
