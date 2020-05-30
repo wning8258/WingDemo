@@ -6,6 +6,8 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
 
+    <uses-feature android:glEsVersion="0x00020000" android:required="true" />
+
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -17,6 +19,7 @@
         <meta-data
             android:name="android.max_aspect"
             android:value="2.4"/>
+
 
         <activity android:name=".ui.activity.MainActivity2">
             <intent-filter>
@@ -55,28 +58,13 @@
         </activity>
         <activity android:name=".net.volley.ui.SimpleRequestActivity">
         </activity>
-        <activity
-            android:name=".customview.activity.CoordinatorLayoutActivity"
-            android:label="@string/title_activity_coordinator_layout"
-            android:theme="@style/AppTheme">
-        </activity>
-        <activity
-            android:name=".customview.activity.InterceptTouchEventActivity"
-            android:label="@string/title_activity_intercept_touch_event"
-            android:theme="@style/AppTheme">
-        </activity>
-        <activity
-            android:name=".producer.ProducerActivity"
-            android:theme="@style/AppTheme"/>
-        <activity
-            android:name=".arouter.ARouterEntranceActivity"
-            android:theme="@style/AppTheme"/>
-        <activity
-            android:name=".arouter.ARouterActivity"
-            android:theme="@style/AppTheme"/>
-        <activity
-            android:name=".architecture.DataBindingActivity"
-            android:theme="@style/AppTheme"/>
+        <activity android:name=".customview.activity.CoordinatorLayoutActivity"/>
+        <activity android:name=".customview.activity.InterceptTouchEventActivity"/>
+        <activity android:name=".producer.ProducerActivity"/>
+        <activity android:name=".arouter.ARouterEntranceActivity" />
+        <activity android:name=".arouter.ARouterActivity" />
+        <activity android:name=".architecture.DataBindingActivity" />
+        <activity android:name=".opengles.OpenGLESTestActivity" />
     </application>
 
 </manifest>
