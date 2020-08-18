@@ -1,14 +1,16 @@
 package com.wning.demo.customview.activity;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import android.view.MotionEvent;
 import android.view.View;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+import com.guagua.modules.utils.LogUtils;
 import com.wning.demo.R;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 public class InterceptTouchEventActivity extends AppCompatActivity {
 
@@ -27,11 +29,37 @@ public class InterceptTouchEventActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        fab.setOnClickListener((view)->{
+
+        });
+
+        new MyTask().execute(1f);
+
     }
 
+    private static class MyTask extends AsyncTask<Float,Integer,String>{
+        private static final String TAG = "MyTask";
 
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        return super.onTouchEvent(event);
+        @Override
+        protected void onPreExecute() {
+            LogUtils.i(TAG,"onPreExecute");
+        }
+
+        @Override
+        protected String doInBackground(Float... f) {
+            publishProgress(1);
+            return "result";
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+        }
+
+        @Override
+        protected void onProgressUpdate(Integer... values) {
+
+        }
     }
+
 }

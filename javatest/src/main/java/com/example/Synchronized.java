@@ -11,7 +11,7 @@ class A{
         }
     }
 
-    public synchronized void methodB(){  //锁定当前对象，与A效果相同
+    public void methodB(){  //锁定当前对象，与A效果相同
         synchronized (this) {
             System.out.println("methodB");
         }

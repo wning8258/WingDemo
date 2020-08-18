@@ -2,6 +2,8 @@ package com.wning.demo;
 
 import android.os.Bundle;
 
+import com.wning.demo.utils.UIUtils;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 
@@ -16,9 +18,8 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         TAG=getClass().getSimpleName();
-        if (getLayoutId() > 0) {
-            setContentView(getLayoutId());
-        }
+        UIUtils.setCustomDensity(this,getApplication());
+        setContentView(getLayoutId());
 
     }
     protected  abstract int getLayoutId();

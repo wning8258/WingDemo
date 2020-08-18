@@ -127,6 +127,31 @@ public class RxJava2Activity extends AppCompatActivity  {
                     switch (position){
                         case 0:  //create
 
+                            Observable.create(observableEmitter -> { //lambda
+                               observableEmitter.onNext("lambda 1111111111111111");
+                            }).subscribe(new Observer<Object>() {
+                                @Override
+                                public void onSubscribe(Disposable d) {
+
+                                }
+
+                                @Override
+                                public void onNext(Object o) {
+                                    LogUtils.i(TAG,"onNext :"+o);
+
+                                }
+
+                                @Override
+                                public void onError(Throwable e) {
+
+                                }
+
+                                @Override
+                                public void onComplete() {
+
+                                }
+                            });
+
                             Observable.create(new ObservableOnSubscribe<String>() {
                                 @Override
                                 public void subscribe(ObservableEmitter<String> emitter) throws Exception {

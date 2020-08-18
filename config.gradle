@@ -2,7 +2,7 @@ ext {
     android = [
             AndroidBuildToolsVersion : "26.0.2",
             AndridMinSdkVersion : 19,
-            AndroidTargetSdkVersion : 19,
+            AndroidTargetSdkVersion : 28,
             AndroidCompileSdkVersion : 28,
             applicationId : "com.guagua.qiqi",
     ]
