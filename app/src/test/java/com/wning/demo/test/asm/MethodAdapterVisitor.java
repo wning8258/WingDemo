@@ -12,29 +12,26 @@ import org.objectweb.asm.commons.Method;
  * 对methodVisitor进行了扩展， 能让我们更加轻松的进行方法分析
  */
 public  class  MethodAdapterVisitor  extends  AdviceAdapter {
-    private  boolean inject  = true;
+    private  boolean inject;
     protected  MethodAdapterVisitor(int api, MethodVisitor methodVisitor, int access, String name, String descriptor) {
         super(api, methodVisitor, access, name, descriptor);
     }
+
     /**
-     * 分析方法上面的注解
-     * 在这里干嘛？？？
-     * <p>
-     * 判断当前这个方法是不是使用了injecttime，如果使用了，我们就需要对这个方法插桩
-     * 没使用，就不管了。
-     *
-     * @param desc
+     * 自己处理的，只处理带有AsmTestAnnotation注释的方法
+     * @param descriptor
      * @param visible
      * @return
      */
-//    @Override
-//    public  AnnotationVisitor visitAnnotation(String desc, Boolean visible) {
-//        if (Type.getDescriptor(ASMTest.class).equals(desc)) {
-//            System.out.println(desc);
-//            inject = true;
-//        }
-//        return  super.visitAnnotation(desc, visible);
-//    }
+    @Override
+    public AnnotationVisitor visitAnnotation(String descriptor, boolean visible) {
+        if (Type.getDescriptor(AsmTestAnnotation.class).equals(descriptor)) {
+            System.out.println(descriptor);
+            inject = true;
+        }
+        return  super.visitAnnotation(descriptor, visible);
+    }
+
     private  int start;
     @Override
     protected  void onMethodEnter() {
