@@ -123,6 +123,11 @@ dependencies {
     implementation 'com.jakewharton.rxbinding3:rxbinding-swiperefreshlayout:3.0.0'
     implementation 'com.jakewharton.rxbinding3:rxbinding-viewpager:3.0.0'
 
+    //asm (https://bintray.com/bintray/jcenter/org.ow2.asm%3Aasm)
+    implementation 'org.ow2.asm:asm:9.0-beta'
+    implementation 'org.ow2.asm:asm-commons:9.0-beta'
+
+
 
 }
 repositories {
