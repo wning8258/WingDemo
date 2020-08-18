@@ -1,1 +1,1 @@
-include ':app', ':wingannotation', ':javatest'
+include ':app', ':wingannotation'

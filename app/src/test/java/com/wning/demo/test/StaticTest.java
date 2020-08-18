@@ -1,4 +1,4 @@
-package com.example;
+package com.wning.demo.test;
 
 public class StaticTest {
 
@@ -17,7 +17,7 @@ public class StaticTest {
 
         test1.a=2222;
 
-        test1.classA=new StaticTest.A();
+        test1.classA=new A();
 
         System.out.println("test2 a:"+test2.a);
         System.out.println("test2 classA:"+test2.classA);

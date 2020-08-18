@@ -1,4 +1,4 @@
-package com.example.array;
+package com.wning.demo.test.algorithm;
 
 /**
  * java给定一个有序数组，删除其中重复元素，只保留一个，并返回新数组的长度

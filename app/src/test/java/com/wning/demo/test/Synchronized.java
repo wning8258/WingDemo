@@ -1,4 +1,4 @@
-package com.example;
+package com.wning.demo.test;
 
 class A{
     public synchronized void methodA(){  //对A的同一个实例加锁，如果不是同一个A的同一个实例，不会等待

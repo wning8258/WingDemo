@@ -1,4 +1,4 @@
-package com.example;
+package com.wning.demo.test;
 
 public class DeadLock {
 

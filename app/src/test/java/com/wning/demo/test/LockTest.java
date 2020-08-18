@@ -1,4 +1,4 @@
-package com.example;
+package com.wning.demo.test;
 
 import java.util.ArrayList;
 import java.util.concurrent.locks.Lock;
