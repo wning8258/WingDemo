@@ -20,46 +20,54 @@ data class KotlinTest1 (val liveType : Int , var roomName : String?){
     }
 }
 
-data class KotlinTest (val liveType : Int){
+data class KotlinTest2 (val liveType : Int){
 }
 
 
 
-fun main(args:Array<String>){
-    println("hello kotlin")
-    val kotlinTest1 = KotlinTest1(1, null)
-    KotlinTest1(1, "hello")
-
-    println("kotlinTest 1 toString :" + kotlinTest1.toString())
-    println("kotlinTest 1 toString :$kotlinTest1")  //等同于上一句
-
-    val kotlinTest1Copy = kotlinTest1.copy();
-    //kotlinTest1Copy.liveType = 2;  //编译报错 val不能重新赋值
-    kotlinTest1Copy.roomName = "hahaha"
-    println("kotlinTest 1 toString : " + kotlinTest1Copy)
-
-    val str1 : String  = "str0"
-    println("str1 length :" + str1.length)
-
-    val str2 : String?  = "str0"
-    //print("str2 length :" + str2?.length)  //编译报错，因为str2可能为空
-    println("str2 length :" + str2?.length)
+class KotlinTest {
 
 
-    val sum: (x: Int, y: Int) -> Int = { x, y -> x + y }  //—>指定返回值为int型
-    println("sum : ${sum(1,2)}");
+    fun test() {
+        println("hello kotlin")
+        val kotlinTest1 = KotlinTest1(1, null)
+        KotlinTest1(1, "hello")
+
+        println("kotlinTest 1 toString :" + kotlinTest1.toString())
+        println("kotlinTest 1 toString :$kotlinTest1")  //等同于上一句
+
+        val kotlinTest1Copy = kotlinTest1.copy();
+        //kotlinTest1Copy.liveType = 2;  //编译报错 val不能重新赋值
+        kotlinTest1Copy.roomName = "hahaha"
+        println("kotlinTest 1 toString : " + kotlinTest1Copy)
+
+        val str1: String = "str0"
+        println("str1 length :" + str1.length)
+
+        val str2: String? = "str0"
+        //print("str2 length :" + str2?.length)  //编译报错，因为str2可能为空
+        println("str2 length :" + str2?.length)
 
 
-    //println(foo3(1,2, this :: foo2));
+        val sum: (x: Int, y: Int) -> Int = { x, y -> x + y }  //—>指定返回值为int型
+        println("sum : ${sum(1, 2)}");
 
 
+        println("foo3 result :${foo3(1, 2, this::foo2)}");
+
+
+    }
+
+    // 表达式函数体
+    fun foo2(x: Int, y: Int) = x + y
+
+    // block 的类型就是函数类型(调用方法aaa方法,aaa 需要两个int参数，返回一个int)
+    fun foo3(x: Int, y: Int, aaa: (Int, Int) -> Int): Int {
+        return aaa.invoke(x, y)
+    }
 }
 
-// 表达式函数体
-fun foo2(x: Int, y: Int) = x + y
-
-// block 的类型就是函数类型
-fun foo3(x: Int, y: Int, block: (Int, Int) -> Int): Int {
-    return block.invoke(x, y)
+fun  main () {
+    val kotlinTest = KotlinTest()
+    kotlinTest.test()
 }
-
