@@ -20,18 +20,54 @@ data class KotlinTest1 (val liveType : Int , var roomName : String?){
     }
 }
 
-data class KotlinTest2 (val liveType : Int){
+data class KotlinTest11 (val liveType : Int){
+}
+
+/**
+ * object代表单例
+ */
+object KotlinTest13 {
+    const val a = 1
+    fun test() {
+
+    }
 }
 
 
 
-class KotlinTest {
+/**
+ *
+ */
+class KotlinUtils {
+    companion object {
+        const val a = 1
+        fun create(): KotlinUtils = KotlinUtils()
+    }
+}
+
+//java code
+/*public final class KotlinTest13 {
+    public static final KotlinTest13 INSTANCE;
+
+    private KotlinTest13() {
+    }
+
+    static {
+        KotlinTest13 var0 = new KotlinTest13();
+        INSTANCE = var0;
+    }
+}*/
+
+
+class KotlinTest12 {
 
 
     fun test() {
         println("hello kotlin")
         val kotlinTest1 = KotlinTest1(1, null)
         KotlinTest1(1, "hello")
+
+        //KotlinTest1();  //报错，如果使用data class 无参的构造方法 ？？？？？？？？
 
         println("kotlinTest 1 toString :" + kotlinTest1.toString())
         println("kotlinTest 1 toString :$kotlinTest1")  //等同于上一句
@@ -55,7 +91,10 @@ class KotlinTest {
 
         println("foo3 result :${foo3(1, 2, this::foo2)}");
 
-
+        var str3 : String? = "11111"
+        println("str3 isEmpty111 : ${str3.isEmpty111()}");
+        var str4 : String? = null;
+        println("str4 isEmpty111 : ${str4.isEmpty111()}");
     }
 
     // 表达式函数体
@@ -65,9 +104,19 @@ class KotlinTest {
     fun foo3(x: Int, y: Int, aaa: (Int, Int) -> Int): Int {
         return aaa.invoke(x, y)
     }
+
+    //给CharSequence(可空)增加isEmpty111的方法
+    fun CharSequence?.isEmpty111() : Boolean {
+        return this == null || this.length == 0;
+    }
 }
 
 fun  main () {
-    val kotlinTest = KotlinTest()
+    val kotlinTest = KotlinTest12()
     kotlinTest.test()
+    KotlinTest13.test();  //单例中的方法调用，等同于java：      KotlinTest13.INSTANCE.test();
+
+    KotlinUtils.a
+    KotlinUtils.create()
 }
+
