@@ -21,4 +21,10 @@
         android:title="架构"
         android:icon="@drawable/ic_launcher"
     />
+
+    <item
+        android:id="@+id/ipc"
+        android:title="进程间通信"
+        android:icon="@drawable/ic_launcher"
+        />
 </menu>

@@ -8,12 +8,13 @@ import android.view.View;
 
 import com.google.android.material.navigation.NavigationView;
 import com.guagua.modules.utils.LogUtils;
+import com.wing.android.IpcFragment;
 import com.wning.demo.BaseActivity;
 import com.wning.demo.R;
 import com.wning.demo.ui.fragment.AnimFragment;
 import com.wning.demo.ui.fragment.ArchitectureFragment;
+import com.wning.demo.ui.fragment.CustomViewFragment;
 import com.wning.demo.ui.fragment.NetworkFragment;
-import com.wning.demo.ui.fragment.ViewFragment;
 
 import java.lang.reflect.Field;
 
@@ -33,11 +34,12 @@ public class MainActivity2 extends BaseActivity {
     private Toolbar mToolbar;
 
     private FragmentManager mFragmentManager;
-    private Fragment mCurrentFragment;
+    private Fragment mDefaultFragment;
     private String TAG_VIEW ="view";
     private String TAG_ANIM="anim";
     private String TAG_NETWORK="network";
     private String TAG_ARCHITECTURE="architecture";
+    private String TAG_IPC="ipc";
 
     @Override
     protected  int getLayoutId() {
@@ -72,16 +74,19 @@ public class MainActivity2 extends BaseActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()){
                     case R.id.customView:
-                        switchFragment(mFragmentManager.findFragmentByTag(TAG_VIEW));
+                        switchFragment(new CustomViewFragment());
                         break;
                     case R.id.anim:
-                        switchFragment(mFragmentManager.findFragmentByTag(TAG_ANIM));
+                        switchFragment(new AnimFragment());
                         break;
                     case R.id.network:
-                        switchFragment(mFragmentManager.findFragmentByTag(TAG_NETWORK));
+                        switchFragment(new NetworkFragment());
                         break;
                     case R.id.architecture:
-                        switchFragment(mFragmentManager.findFragmentByTag(TAG_ARCHITECTURE));
+                        switchFragment(new ArchitectureFragment());
+                        break;
+                     case R.id.ipc:
+                        switchFragment(new IpcFragment());
                         break;
                 }
                 menuItem.setChecked(true);
@@ -90,49 +95,24 @@ public class MainActivity2 extends BaseActivity {
             }
         });
         mFragmentManager=getSupportFragmentManager();
-        /**
-         * 防止碎片重叠
-         */
-        Fragment animFragment;
-        Fragment networkFragment;
-        Fragment architectureFragment;
-        if(savedInstanceState != null) {
-            mCurrentFragment = mFragmentManager.findFragmentByTag(TAG_VIEW);
-            animFragment = mFragmentManager.findFragmentByTag(TAG_ANIM);
-            networkFragment = mFragmentManager.findFragmentByTag(TAG_NETWORK);
-            architectureFragment = mFragmentManager.findFragmentByTag(TAG_ARCHITECTURE);
-            mFragmentManager.beginTransaction().show(mCurrentFragment)
-                    .hide(animFragment)
-                    .hide(networkFragment)
-                    .hide(architectureFragment)
-                    .commit();
-        }else {
-            mCurrentFragment = new ViewFragment();
-            animFragment = new AnimFragment();
-            networkFragment = new NetworkFragment();
-            architectureFragment = new ArchitectureFragment();
-            mFragmentManager.beginTransaction()
-                    .add(R.id.content, mCurrentFragment, TAG_VIEW)
-                    .add(R.id.content, animFragment, TAG_ANIM)
-                    .add(R.id.content, networkFragment, TAG_NETWORK)
-                    .add(R.id.content, architectureFragment, TAG_ARCHITECTURE)
-                    .show(mCurrentFragment)
-                    .hide(animFragment)
-                    .hide(networkFragment)
-                    .hide(architectureFragment)
-                    .commit();
-        }
+
+        //默认使用ipc
+        mDefaultFragment = new IpcFragment();
+
+        mFragmentManager.beginTransaction().show(mDefaultFragment)
+                .replace(R.id.content, mDefaultFragment)
+                .commit();
 
     }
 
     // 根据所点列表项的下标，切换fragment
     public void switchFragment(Fragment fragmentId) {
         mDrawerLayout.closeDrawers();
-        if(mCurrentFragment == fragmentId)
+        if(mDefaultFragment == fragmentId)
             return;
         FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
-        fragmentTransaction.hide(mCurrentFragment).show(fragmentId).commit();
-        mCurrentFragment = fragmentId;
+        fragmentTransaction.replace(R.id.content, fragmentId).addToBackStack(fragmentId.getClass().getSimpleName()).commit();
+        mDefaultFragment = fragmentId;
     }
 
     /**

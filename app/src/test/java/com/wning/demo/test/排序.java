@@ -2,14 +2,14 @@ package com.wning.demo.test;
 
 import java.util.Arrays;
 
-public class Sort {
+public class 排序 {
     public static void main(String[] args){
 
         int a[]={6,4,8,7,1,5,3,2};
 //        int a[]={6,1,2,7,9};
        // int b[]={1,2,3,4,5,6,7,8};
 
-        Sort sort=new Sort();
+        排序 sort=new 排序();
        //  sort.bubbleSort(a);
 //       sort.quickSort(a,0,a.length-1);
         sort.choiceSort(a);

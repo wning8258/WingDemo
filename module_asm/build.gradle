@@ -1,0 +1,25 @@
+//apply plugin: 'com.novoda.bintray-release'
+apply plugin: 'groovy'
+
+
+//publish {
+//    repoName = 'maven'  //仓库名，默认命就是maven
+//    userOrg = 'wning8258'                 //bintray.com用户名
+//    groupId = 'com.wing.android'             //jcenter上的路径
+//    artifactId = 'asm'        //项目名称 (对应bintray上的package name)
+//    publishVersion = '0.0.2'          //版本号
+//    desc = 'asm 测试'
+//    website = 'https://github.com/wning8258/WingAndroid'
+//}
+
+
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    //gradle sdk
+    compileOnly gradleApi()
+    //groovy sdk
+    compileOnly localGroovy()
+    //view binding的本质 https://juejin.cn/post/6844904106268557326
+    //implementation group: 'androidx.databinding', name: 'databinding-compiler-common', version: '3.6.3'
+}

@@ -77,6 +77,20 @@
         <activity
             android:name=".architecture.DataBindingActivity"
             android:theme="@style/AppTheme"/>
+
+
+        <activity android:name="com.wing.android.aidl.BookManagerActivity"></activity>
+        <activity android:name="com.wing.android.messenger.MessengerActivity" />
+        <activity android:name="com.wing.android.bindpool.BinderPoolActivity" />
+
+        <service
+            android:name="com.wing.android.messenger.MessengerService"
+            android:process=":remote" />
+        <service
+            android:name="com.wing.android.aidl.BookManagerService"
+            android:process=":remote" />
+        <service android:name="com.wing.android.bindpool.BinderPoolService"
+            android:process=":remote"/>
     </application>
 
 </manifest>

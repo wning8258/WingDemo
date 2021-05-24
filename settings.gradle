@@ -1,1 +1,1 @@
-include ':app', ':wingannotation'
+include ':app', ':wingannotation', ':module_asm'

@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+//apply plugin: 'com.wing.android.gradle'  //增加自己实现的插件，名字x为插件module META_INF/gradle-plugins/下的x.properties
 
 android {
     compileSdkVersion rootProject.ext.android.AndroidCompileSdkVersion
@@ -45,9 +46,14 @@ android {
     dataBinding {
         enabled true
     }
+
+    viewBinding {
+        enabled = true
+    }
 }
 
 dependencies {
+    implementation project(':module_asm')
 
     def googleDependencies = rootProject.ext.goodleDependencies
     def otherDependencies = rootProject.ext.otherDependdencies
