@@ -24,6 +24,8 @@ public class BookManagerActivity extends AppCompatActivity {
     private static final int MESSAGE_NEW_BOOK_ARRIVED = 1;
     private ActivityBookManagerBinding inflate;
 
+    private TestServerCallClientBinder testServerCallClientBinder = new TestServerCallClientBinder();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +34,29 @@ public class BookManagerActivity extends AppCompatActivity {
 
         Intent intent = new Intent (this, BookManagerService.class);
         bindService(intent,connection, Context.BIND_AUTO_CREATE);
+    }
+
+    /**
+     * 创建一个binder，尝试直接扔给服务器。让服务器去调用客户端的方法
+     */
+    private class TestServerCallClientBinder extends  ITestServerCallClient.Stub{
+
+        @Override
+        public void testServerCallClient() throws RemoteException {
+            /**
+             * https://blog.csdn.net/braintt/article/details/88046162
+             * ITestServerCallClient.aidl如果不加oneWay,
+             * setClientBinder调用testServerCallClient这里的线程会是main,并不是binder线程
+             * （因为主线程调用了服务器的方法，主线程是被阻塞的。binder做了优化,直接让主线程处理请求）
+             *
+             * onNewBookArrived调用testServerCallClient 是binder线程（因为这里主线程不是阻塞的）
+             *
+             *
+             * 加了oneway之后，请求变为异步的，直接会在binder线程执行
+             *
+             */
+            Log.i("testServerCallClient","testServerCallClient ，thread:" + Thread.currentThread().getName());
+        }
     }
 
     IBookManager remoteManager;
@@ -54,6 +79,10 @@ public class BookManagerActivity extends AppCompatActivity {
                 Log.i(TAG, "query book new list, list :" + bookList.toString());
 
                 remoteManager.registerListener(newBookArrivedListener);
+
+
+                //尝试客户端直接创建一个binder，扔给服务器
+                remoteManager.setClientBinder(testServerCallClientBinder);
             } catch (RemoteException e) {
                 e.printStackTrace();
             }
@@ -70,6 +99,7 @@ public class BookManagerActivity extends AppCompatActivity {
 
         @Override
         public void onNewBookArrived(Book book) throws RemoteException {
+            //服务器通知
             handler.obtainMessage(MESSAGE_NEW_BOOK_ARRIVED, book).sendToTarget();
         }
     };

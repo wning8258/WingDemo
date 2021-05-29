@@ -19,6 +19,9 @@ public class BookManagerService extends Service {
 
     private static final String TAG= "BookManagerService";
 
+    private ITestServerCallClient testServerCallClientBinder;
+
+
     //service要处理一对多，这是要处理并发
     private CopyOnWriteArrayList<Book> mBookList = new CopyOnWriteArrayList<>();
 
@@ -50,6 +53,7 @@ public class BookManagerService extends Service {
 
 
     private Binder binder = new IBookManager.Stub() {
+
         @Override
         public List<Book> getBookList() throws RemoteException {
             return mBookList;
@@ -96,6 +100,15 @@ public class BookManagerService extends Service {
             remoteCallbackList.finishBroadcast();
             Log.d(TAG, "unregisterListener, current size:" + N);
         }
+
+        @Override
+        public void setClientBinder(ITestServerCallClient binder) throws RemoteException {
+            //尝试通过客户端的binder直接调用客户端
+            //setClientBinder testServerCallClient Binder:22959_4
+            Log.i(TAG,"setClientBinder testServerCallClient " +  Thread.currentThread().getName());
+            testServerCallClientBinder = binder;
+            testServerCallClientBinder.testServerCallClient();
+        }
     };
     private void onNewBookArrived(Book book) throws RemoteException {
         mBookList.add(book);
@@ -111,6 +124,7 @@ public class BookManagerService extends Service {
             if (l != null) {
                 try {
                     l.onNewBookArrived(book);
+                    testServerCallClientBinder.testServerCallClient();
                 } catch (RemoteException e) {
                     e.printStackTrace();
                 }

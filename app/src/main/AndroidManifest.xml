@@ -90,7 +90,8 @@
             android:name="com.wing.android.aidl.BookManagerService"
             android:process=":remote" />
         <service android:name="com.wing.android.bindpool.BinderPoolService"
-            android:process=":remote"/>
+            android:process=":remote"
+            />
     </application>
 
 </manifest>

@@ -56,7 +56,18 @@ public class BinderPool extends IBinderPool.Stub{
     private ServiceConnection mBinderPoolConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
+            //如果是同一个进程，直接返回service;否则，返回stub.proxy
             mBinderPool = IBinderPool.Stub.asInterface(service);
+            Log.i(TAG,"onServiceConnected IBInder:" + service + ",mBinderPool :" +mBinderPool);
+            /**
+             * 如果BinderPoolService是当前进程的话
+             * onServiceConnected IBInder:com.wing.android.bindpool.BinderPool$BinderPoolImpl@5b54a4d,
+             * mBinderPool :com.wing.android.bindpool.BinderPool$BinderPoolImpl@5b54a4d
+             *
+             * 如果不是同一个进程：
+             *  onServiceConnected IBInder:android.os.BinderProxy@f624902,
+             * mBinderPool :com.wing.android.bindpool.IBinderPool$Stub$Proxy@8a3e213
+             */
             try {
                 mBinderPool.asBinder().linkToDeath(mBinderPoolDeathRecipient, 0);
             } catch (RemoteException e) {
