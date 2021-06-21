@@ -6,7 +6,7 @@ import java.lang.reflect.Proxy;
 
 import retrofit2.http.GET;
 
-public class MyClass {
+public class 动态代理 {
     public interface ITest {
         @GET("/heiheihei")
         public void add(int a, int b);

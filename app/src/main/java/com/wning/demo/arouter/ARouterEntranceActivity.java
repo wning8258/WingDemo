@@ -9,7 +9,7 @@ import com.alibaba.android.arouter.launcher.ARouter;
 import com.wning.demo.BaseActivity;
 import com.wning.demo.R;
 
-@Route(path = "/test/activity")
+@Route(path = "/router/entrance")
 public class ARouterEntranceActivity extends BaseActivity implements View.OnClickListener {
 
     private Button btn;
