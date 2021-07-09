@@ -137,6 +137,9 @@ dependencies {
     implementation 'org.ow2.asm:asm:9.0-beta'
     implementation 'org.ow2.asm:asm-commons:9.0-beta'
 
+    //https://github.com/CymChad/BaseRecyclerViewAdapterHelper/blob/2.x/README-cn.md
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.50'
+
 
 
 }

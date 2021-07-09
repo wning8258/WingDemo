@@ -5,7 +5,9 @@ buildscript {
         google()
         jcenter()
         mavenCentral()
-        maven {url "https://dl.bintray.com/wning8258/maven"}
+        //maven {url "https://dl.bintray.com/wning8258/maven"}  //过期了
+        maven { url "https://jitpack.io" }
+
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
