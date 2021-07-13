@@ -36,7 +36,7 @@ object KotlinTest13 {
 
 
 /**
- *
+ * class 默认生成的为final的
  */
 class KotlinUtils {
     companion object {
