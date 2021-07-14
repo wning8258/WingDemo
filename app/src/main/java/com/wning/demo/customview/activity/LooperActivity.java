@@ -7,21 +7,21 @@ import android.os.Message;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.viewbinding.ViewBinding;
+
 import com.guagua.modules.utils.LogUtils;
 import com.wning.demo.BaseActivity;
 import com.wning.demo.R;
+import com.wning.demo.databinding.ActivityLooperBinding;
 
-public class LooperActivity extends BaseActivity implements View.OnClickListener {
+public class LooperActivity extends BaseActivity<ActivityLooperBinding> implements View.OnClickListener {
 
     Button test;
 
 
     private Handler mMainHandler,mChildHandler;
 
-    @Override
-    protected int getLayoutId() {
-        return R.layout.activity_looper;
-    }
+
 
 
     @Override

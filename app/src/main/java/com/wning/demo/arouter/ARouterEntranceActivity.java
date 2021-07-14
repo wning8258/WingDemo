@@ -4,20 +4,20 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.viewbinding.ViewBinding;
+
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.wning.demo.BaseActivity;
 import com.wning.demo.R;
+import com.wning.demo.databinding.ActivityArouterEntranceBinding;
 
 @Route(path = "/router/entrance")
-public class ARouterEntranceActivity extends BaseActivity implements View.OnClickListener {
+public class ARouterEntranceActivity extends BaseActivity<ActivityArouterEntranceBinding> implements View.OnClickListener {
 
     private Button btn;
 
-    @Override
-    protected int getLayoutId() {
-        return R.layout.activity_arouter_entrance;
-    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

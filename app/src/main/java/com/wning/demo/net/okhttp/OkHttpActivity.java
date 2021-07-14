@@ -12,6 +12,7 @@ import com.guagua.qiqi.utils.SignHelper;
 import com.guagua.qiqi.utils.UrlUtil;
 import com.wning.demo.BaseActivity;
 import com.wning.demo.R;
+import com.wning.demo.databinding.ActivityOkhttpBinding;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -37,7 +38,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class OkHttpActivity extends BaseActivity implements View.OnClickListener {
+public class OkHttpActivity extends BaseActivity<ActivityOkhttpBinding> implements View.OnClickListener {
 
     private static final String TAG = "OkHttpActivity";
 
@@ -58,10 +59,6 @@ public class OkHttpActivity extends BaseActivity implements View.OnClickListener
 
     CompositeDisposable compositeDisposable = new CompositeDisposable();
 
-    @Override
-    protected int getLayoutId() {
-        return R.layout.activity_okhttp;
-    }
 
 
     @Override

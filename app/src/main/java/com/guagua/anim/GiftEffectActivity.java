@@ -5,12 +5,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
+import androidx.viewbinding.ViewBinding;
+
 import com.guagua.qiqi.gifteffect.BaseSurfaceView;
 import com.wning.demo.BaseActivity;
 import com.wning.demo.R;
+import com.wning.demo.databinding.ActivityGiftEffectBinding;
 import com.wning.demo.gifteffect.GiftAnimManager;
 
-public class GiftEffectActivity extends BaseActivity implements View.OnClickListener {
+public class GiftEffectActivity extends BaseActivity<ActivityGiftEffectBinding> implements View.OnClickListener {
 
     private BaseSurfaceView baseSurfaceView;
     private FrameLayout baseSurfaceViewContainer;
@@ -46,10 +49,7 @@ public class GiftEffectActivity extends BaseActivity implements View.OnClickList
 
     }
 
-    @Override
-    protected int getLayoutId() {
-        return R.layout.activity_gift_effect;
-    }
+
 
     @Override
     protected void onResume() {

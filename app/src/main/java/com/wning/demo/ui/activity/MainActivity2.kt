@@ -12,53 +12,61 @@ import androidx.customview.widget.ViewDragHelper
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import androidx.viewbinding.ViewBinding
 import com.google.android.material.navigation.NavigationView
 import com.guagua.modules.utils.LogUtils
 import com.wing.android.IpcFragment
 import com.wning.demo.BaseActivity
 import com.wning.demo.R
+import com.wning.demo.databinding.ActivityMain2Binding
 import com.wning.demo.ui.fragment.AnimFragment
 import com.wning.demo.ui.fragment.ArchitectureFragment
 import com.wning.demo.ui.fragment.CustomViewFragment
 import com.wning.demo.ui.fragment.NetworkFragment
 
-class MainActivity2 : BaseActivity() {
-    private var mDrawerLayout: DrawerLayout? = null
-    private var mNavigationView: NavigationView? = null
-    private var mToolbar: Toolbar? = null
-    private var mFragmentManager: FragmentManager? = null
-    private var mDefaultFragment: Fragment? = null
-    private val TAG_VIEW = "view"
-    private val TAG_ANIM = "anim"
-    private val TAG_NETWORK = "network"
-    private val TAG_ARCHITECTURE = "architecture"
-    private val TAG_IPC = "ipc"
-    override fun getLayoutId(): Int {
-        return R.layout.activity_main2
+class MainActivity2 : BaseActivity<ActivityMain2Binding>() {
+    // lateinit用于var
+    private lateinit var mFragmentManager: FragmentManager
+    //延迟初始化，只有第一次调用的时候 才初始化，by lazy只用于val
+    private val mDefaultFragment: Fragment by lazy {
+        IpcFragment()
     }
+
+    companion object {
+        val TAG_VIEW = "view"
+        val TAG_ANIM = "anim"
+        val TAG_NETWORK = "network"
+        val TAG_ARCHITECTURE = "architecture"  //MainActivity2.Companion.TAG_ARCHITECTURE
+        const val TAG_IPC = "ipc"  //相当于java中的常量
+
+        //真正的静态方法
+        @JvmStatic
+        fun staticMethod() {
+            println("this is static method")
+        }
+    }
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mDrawerLayout = findViewById(R.id.drawerLayout)
-        mNavigationView = findViewById(R.id.navigation_view)
-        mNavigationView?.setItemIconTintList(null)
-        mToolbar = findViewById(R.id.toolbar)
-        setSupportActionBar(mToolbar)
+        viewBinding.navigationView?.setItemIconTintList(null)
+        setSupportActionBar(viewBinding.toolbar)
         val mToggle = ActionBarDrawerToggle(
             this,
-            mDrawerLayout,
-            mToolbar,
+            viewBinding.drawerLayout,
+            viewBinding.toolbar,
             R.string.drawer_open,
             R.string.drawer_close
         )
         mToggle.syncState()
-        mDrawerLayout?.addDrawerListener(mToggle)
-        setDrawerLeftEdgeSize(this, mDrawerLayout, 0.1f)
+        viewBinding.drawerLayout?.addDrawerListener(mToggle)
+        setDrawerLeftEdgeSize(this, viewBinding.drawerLayout, 0.1f)
 
         //头部点击事件
-        mNavigationView?.getHeaderView(0)?.setOnClickListener { LogUtils.i(TAG, "NavigationView head clicked") }
+        viewBinding.navigationView?.getHeaderView(0)?.setOnClickListener { LogUtils.i(TAG, "NavigationView head clicked") }
         //item点击事件
-        mNavigationView?.setNavigationItemSelectedListener(NavigationView.OnNavigationItemSelectedListener { menuItem ->
+        viewBinding.navigationView?.setNavigationItemSelectedListener(NavigationView.OnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.customView -> switchFragment(CustomViewFragment())
                 R.id.anim -> switchFragment(AnimFragment())
@@ -67,14 +75,23 @@ class MainActivity2 : BaseActivity() {
                 R.id.ipc -> switchFragment(IpcFragment())
             }
             menuItem.isChecked = true
-            mDrawerLayout?.closeDrawers()
+            viewBinding.drawerLayout?.closeDrawers()
             true
         })
-        mFragmentManager = supportFragmentManager
+        /**
+         * if (((MainActivity2)this).mFragmentManager == null) {
+        FragmentManager var10001 = this.getSupportFragmentManager();
+        Intrinsics.checkNotNullExpressionValue(var10001, "supportFragmentManager");
+        this.mFragmentManager = var10001;
+        }
+         */
+        if (!::mFragmentManager.isInitialized) {  //增加判空处理
+            mFragmentManager = supportFragmentManager
+        }
 
         //默认使用ipc
-        mDefaultFragment = IpcFragment()
-        mDefaultFragment?.let {
+
+        mDefaultFragment.let {
             mFragmentManager!!.beginTransaction().show(it)
                 .replace(R.id.content, it)
                 .commit()
@@ -84,7 +101,6 @@ class MainActivity2 : BaseActivity() {
 
 
     }
-
     private fun testKotlin() {
         Looper.myQueue().addIdleHandler ({ ->
             println("queueIdle return true")
@@ -102,25 +118,25 @@ class MainActivity2 : BaseActivity() {
             }
         })
 
-        mToolbar?.setOnClickListener ({ v ->
+        viewBinding.toolbar?.setOnClickListener ({ v ->
             v?.visibility = View.GONE
             println("queueIdle return true")
 
         })
 
-        mToolbar?.setOnClickListener { v ->
+        viewBinding.toolbar?.setOnClickListener { v ->
             v.visibility = View.GONE
             println("queueIdle return true")
 
         }
 
-        mToolbar?.setOnClickListener {
+        viewBinding.toolbar?.setOnClickListener {
             println("11333")
             println("queueIdle return true")
 
         }
 
-        mToolbar?.setOnClickListener(object : View.OnClickListener {
+        viewBinding.toolbar?.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
                 v?.visibility = View.GONE
             }
@@ -130,12 +146,12 @@ class MainActivity2 : BaseActivity() {
 
     // 根据所点列表项的下标，切换fragment
     fun switchFragment(fragmentId: Fragment) {
-        mDrawerLayout!!.closeDrawers()
+        viewBinding.drawerLayout!!.closeDrawers()
         if (mDefaultFragment === fragmentId) return
         val fragmentTransaction = mFragmentManager!!.beginTransaction()
         fragmentTransaction.replace(R.id.content, fragmentId)
             .addToBackStack(fragmentId.javaClass.simpleName).commit()
-        mDefaultFragment = fragmentId
+        //mDefaultFragment = fragmentId
     }
 
     /**

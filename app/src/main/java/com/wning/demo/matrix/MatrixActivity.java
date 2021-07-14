@@ -11,8 +11,9 @@ import android.widget.Toast;
 import com.guagua.modules.utils.LogUtils;
 import com.wning.demo.BaseActivity;
 import com.wning.demo.R;
+import com.wning.demo.databinding.ActivityMatrixBinding;
 
-public class MatrixActivity extends BaseActivity implements View.OnClickListener {
+public class MatrixActivity extends BaseActivity<ActivityMatrixBinding> implements View.OnClickListener {
 
     private ImageView iv;
     private Button btn;
@@ -28,10 +29,6 @@ public class MatrixActivity extends BaseActivity implements View.OnClickListener
         btn.setOnClickListener(this);
     }
 
-    @Override
-    protected int getLayoutId() {
-        return R.layout.activity_matrix;
-    }
 
     @Override
     public void onClick(View v) {

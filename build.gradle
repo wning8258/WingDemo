@@ -44,8 +44,9 @@ compileTestKotlin {
 allprojects {
     repositories {
         google()
-        jcenter()
-        maven {url "https://dl.bintray.com/wning8258/maven"}
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+        // maven {url "https://dl.bintray.com/wning8258/maven"}  //过期了
     }
     tasks.withType(Javadoc) {//解决lib中中文乱码问题
         options.addStringOption('Xdoclint:none', '-quiet')

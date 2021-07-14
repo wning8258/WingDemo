@@ -4,21 +4,20 @@ import android.os.Bundle;
 import android.os.SystemClock;
 import android.view.Choreographer;
 
+import androidx.viewbinding.ViewBinding;
+
 import com.guagua.modules.utils.LogUtils;
 import com.wning.demo.BaseActivity;
 import com.wning.demo.R;
+import com.wning.demo.databinding.ActivityLooperBinding;
 
-public class ChoreographerActivity extends BaseActivity {
+public class ChoreographerActivity extends BaseActivity<ActivityLooperBinding> {
 
 
    // private Choreographer mChoreographer;
     private ChoreographerFrameCallback mFrameCallback;
 
 
-    @Override
-    protected int getLayoutId() {
-        return R.layout.activity_looper;
-    }
 
 
     @Override

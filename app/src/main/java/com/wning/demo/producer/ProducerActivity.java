@@ -5,21 +5,20 @@ import android.os.Bundle;
 import com.guagua.modules.utils.LogUtils;
 import com.wning.demo.BaseActivity;
 import com.wning.demo.R;
+import com.wning.demo.databinding.ActivityProducerBinding;
 
 /**
  * Created by wning on 2018/4/2.
  */
 
-public class ProducerActivity extends BaseActivity{
-    @Override
-    protected int getLayoutId() {
-        return R.layout.activity_producer;
-    }
+public class ProducerActivity extends BaseActivity<ActivityProducerBinding>{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
+
+
 
     @Override
     protected void onResume() {
