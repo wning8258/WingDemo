@@ -18,7 +18,7 @@ class 二叉树的层序遍历 {
 
         while (!queue.isEmpty()){
             // 从队列中取出节点
-            TreeNode node = queue.remove();
+            TreeNode node = queue.poll();
             System.out.println(node.val);
 
             // 如果其左子树不为空，则将左子树加入队列
