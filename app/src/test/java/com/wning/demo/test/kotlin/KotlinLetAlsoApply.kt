@@ -3,7 +3,7 @@ package com.wning.demo.test.kotlin
 /**
  * https://blog.csdn.net/u013064109/article/details/78786646
  */
-class LetAlsoApply {
+class KotlinLetAlsoApply {
     fun test() {
         val person: Person = Person("zhangsan")
         val name = person.let {

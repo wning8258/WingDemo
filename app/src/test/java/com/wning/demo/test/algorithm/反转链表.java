@@ -18,8 +18,9 @@ public class 反转链表 {
         ListNode curr = head;
         ListNode next;
         while (curr != null) {
+            //先保存curr的下一个节点
             next = curr.next;
-            //反转链表，当前的下一个指向空
+            //反转链表，curr的下一个指向空 (真正的节点已经用next保存)
             curr.next = prev;
             //prev往下移动，指向cur
             prev = curr;

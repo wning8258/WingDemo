@@ -1,6 +1,6 @@
 package com.wning.demo.test.kotlin
 
-class ListTest {
+class KotlinList {
     val numbers = mutableListOf<Int>(1,2,3,4)
     fun test() {
         numbers.forEachIndexed { index, i ->
@@ -11,6 +11,6 @@ class ListTest {
 }
 
 fun main() {
-    var listTest = ListTest()
+    var listTest = KotlinList()
     listTest.test()
 }

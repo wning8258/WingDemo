@@ -62,12 +62,12 @@ import com.wning.demo.R
 
 
  */
-class KotlinConstructor constructor(username : String, age :Int){
+class KotlinConstructor constructor(username1 : String, age :Int){
     val username: String
     val age: Int
 
     init{
-        this.username = username
+        this.username = username1
         this.age = age
     }
     //jave code(变量为final的，不加init代码块会报错，会在构造函数时赋值)
@@ -109,28 +109,36 @@ class KotlinConstructor3 (username : String, age :Int){
     private val age: Int = age
 }
 
-class KotlinConstructor4(private val username : String, private val age : Int){
-}
-
-class KotlinConstructor5(private val username : String, private val age : Int)
 
 /**
  * 4.    当我们定义一个类时，我们如果没有为其显式提供Primary Constructor，Kotlin编译器会默认为其生成一个无参主构造
  */
-class KotlinConstructor6(username : String, age : Int) {
-    val username = "username111"
+class KotlinConstructor6(val username : String = "username111", age : Int) {
     val age = 444
-    /**
-     * java code
-     *  public KotlinConstructor6(@NotNull String username, int age) {
-            Intrinsics.checkParameterIsNotNull(username, "username");
-            super();
-            this.username = "username111";
-            this.age = 444;
-        }
-     */
 }
 
+/**
+ * public final class KotlinConstructor6 {
+private final int age;
+@NotNull
+private final String username;
+
+public final int getAge() {
+return this.age;
+}
+
+@NotNull
+public final String getUsername() {
+return this.username;
+}
+
+public KotlinConstructor6(@NotNull String username, int age) {
+Intrinsics.checkNotNullParameter(username, "username");
+super();
+this.username = username;
+this.age = 444;
+}
+ */
 class User{
     private val username: String
     private var age: Int
@@ -176,6 +184,9 @@ fun main() {
     println("kotlinConstructor username :${kotlinConstructor.username}, age :${kotlinConstructor.age}")
     val kotlinConstructor6 = KotlinConstructor6("aaa6", 16)
     println("kotlinConstructor username :${kotlinConstructor6.username}, age :${kotlinConstructor6.age}")
+
+    val kotlinConstructor61 = KotlinConstructor6(age = 15)
+    println("kotlinConstructor username :${kotlinConstructor61.username}, age :${kotlinConstructor61.age}")
 
 
 }

@@ -59,7 +59,7 @@ class KotlinUtils {
 }*/
 
 
-class KotlinTest12 {
+class KotlinTest {
 
 
     fun test() {
@@ -112,7 +112,7 @@ class KotlinTest12 {
 }
 
 fun  main () {
-    val kotlinTest = KotlinTest12()
+    val kotlinTest = KotlinTest()
     kotlinTest.test()
     KotlinTest13.test();  //单例中的方法调用，等同于java：      KotlinTest13.INSTANCE.test();
 
